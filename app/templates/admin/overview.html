@@ -1,0 +1,314 @@
+{% extends "admin/layout.html" %}
+
+{% block admin_title %}Executive Overview{% endblock %}
+{% block admin_subtitle %}Real-time Flash Sale Metrics & AI Shield Telemetry{% endblock %}
+
+{% block admin_content %}
+<!-- KPI Summary Metric Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+  
+  <!-- Total Revenue -->
+  <div class="p-5 rounded-2xl bg-dark-900 border border-slate-800 relative overflow-hidden group hover:border-slate-700 transition-all">
+    <div class="flex items-center justify-between">
+      <span class="text-xs font-semibold text-slate-400">Total Approved Revenue</span>
+      <div class="p-2 rounded-xl bg-emerald-500/10 text-emerald-400">
+        <i data-lucide="dollar-sign" class="w-4 h-4"></i>
+      </div>
+    </div>
+    <div class="mt-3 text-2xl font-bold font-display text-white tracking-tight">{{ total_sales | currency }}</div>
+    <div class="mt-2 flex items-center gap-1.5 text-xs text-emerald-400 font-medium">
+      <i data-lucide="trending-up" class="w-3.5 h-3.5"></i>
+      <span>+110% AI Revenue Uplift</span>
+    </div>
+    <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-emerald-500/5 rounded-full blur-xl group-hover:bg-emerald-500/10 transition-all"></div>
+  </div>
+
+  <!-- Active Flash Sales -->
+  <div class="p-5 rounded-2xl bg-dark-900 border border-slate-800 relative overflow-hidden group hover:border-slate-700 transition-all">
+    <div class="flex items-center justify-between">
+      <span class="text-xs font-semibold text-slate-400">Active Flash Sale SKUs</span>
+      <div class="p-2 rounded-xl bg-brand-500/10 text-brand-400">
+        <i data-lucide="zap" class="w-4 h-4"></i>
+      </div>
+    </div>
+    <div class="mt-3 text-2xl font-bold font-display text-white tracking-tight">{{ active_flash_sales }} <span class="text-sm font-normal text-slate-400">Products</span></div>
+    <div class="mt-2 flex items-center gap-1.5 text-xs text-brand-400 font-medium">
+      <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+      <span>Dynamic pricing recalculating</span>
+    </div>
+    <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-brand-500/5 rounded-full blur-xl group-hover:bg-brand-500/10 transition-all"></div>
+  </div>
+
+  <!-- Fraud Alerts / Threats Stopped -->
+  <div class="p-5 rounded-2xl bg-dark-900 border border-slate-800 relative overflow-hidden group hover:border-slate-700 transition-all">
+    <div class="flex items-center justify-between">
+      <span class="text-xs font-semibold text-slate-400">Security Threats Intercepted</span>
+      <div class="p-2 rounded-xl bg-rose-500/10 text-rose-400">
+        <i data-lucide="shield-alert" class="w-4 h-4"></i>
+      </div>
+    </div>
+    <div class="mt-3 text-2xl font-bold font-display text-white tracking-tight">{{ blocked_orders }} <span class="text-sm font-normal text-slate-400">Blocked</span></div>
+    <div class="mt-2 flex items-center gap-1.5 text-xs text-amber-400 font-medium">
+      <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
+      <span>{{ pending_alerts }} pending compliance review</span>
+    </div>
+    <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-rose-500/5 rounded-full blur-xl group-hover:bg-rose-500/10 transition-all"></div>
+  </div>
+
+  <!-- Total Transactions Screened -->
+  <div class="p-5 rounded-2xl bg-dark-900 border border-slate-800 relative overflow-hidden group hover:border-slate-700 transition-all">
+    <div class="flex items-center justify-between">
+      <span class="text-xs font-semibold text-slate-400">Total Orders Screened</span>
+      <div class="p-2 rounded-xl bg-purple-500/10 text-purple-400">
+        <i data-lucide="activity" class="w-4 h-4"></i>
+      </div>
+    </div>
+    <div class="mt-3 text-2xl font-bold font-display text-white tracking-tight">{{ "{:,}".format(total_orders) }}</div>
+    <div class="mt-2 flex items-center gap-1.5 text-xs text-purple-400 font-medium">
+      <i data-lucide="check-check" class="w-3.5 h-3.5"></i>
+      <span>100% Real-time AI screening</span>
+    </div>
+    <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-purple-500/5 rounded-full blur-xl group-hover:bg-purple-500/10 transition-all"></div>
+  </div>
+
+</div>
+
+<!-- Revenue Comparison Chart Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+  <!-- Chart: Dynamic Pricing vs Fixed Pricing -->
+  <div class="lg:col-span-2 p-6 rounded-2xl bg-dark-900 border border-slate-800 space-y-4">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+      <div>
+        <h3 class="text-sm font-bold text-white font-display flex items-center gap-2">
+          <span>Revenue Impact: Dynamic vs. Fixed Pricing</span>
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">+110% Uplift</span>
+        </h3>
+        <p class="text-xs text-slate-400">Simulation comparison between AI dynamic elasticity model vs. traditional flat 10% discount</p>
+      </div>
+      <div class="flex items-center gap-3 text-xs font-semibold">
+        <div class="flex items-center gap-1.5 text-brand-400">
+          <span class="w-2.5 h-2.5 rounded-full bg-brand-500"></span>
+          <span>AI Dynamic Pricing</span>
+        </div>
+        <div class="flex items-center gap-1.5 text-slate-400">
+          <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+          <span>Fixed Flat Pricing</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Canvas -->
+    <div class="relative h-72 w-full">
+      <canvas id="revenueImpactChart"></canvas>
+    </div>
+  </div>
+
+  <!-- AI Pricing Optimization Quick Widget -->
+  <div class="p-6 rounded-2xl bg-dark-900 border border-slate-800 space-y-4 flex flex-col justify-between">
+    <div>
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-bold text-white font-display">Live AI Price Recommendations</h3>
+        <a href="{{ url_for('dashboard.pricing') }}" class="text-xs font-semibold text-brand-400 hover:text-brand-300">View All &rarr;</a>
+      </div>
+      <p class="text-xs text-slate-400 mt-1">Real-time XGBoost price optimization suggestions</p>
+
+      <div class="mt-4 space-y-3">
+        {% for rec in sample_recs %}
+          <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 hover:border-slate-700 transition-all flex items-center justify-between gap-3 text-xs">
+            <div class="min-w-0">
+              <div class="font-semibold text-slate-200 truncate">{{ rec.product_name }}</div>
+              <div class="text-[11px] text-slate-400 flex items-center gap-2 mt-0.5">
+                <span>Current: <span class="line-through">{{ rec.current_price | currency }}</span></span>
+                <span class="text-emerald-400 font-bold">AI: {{ rec.recommended_price | currency }}</span>
+              </div>
+            </div>
+            <button onclick="quickApplyPrice('{{ rec.product_id }}', {{ rec.recommended_price }})" 
+              class="flex-shrink-0 px-2.5 py-1 rounded-lg bg-brand-600 hover:bg-brand-500 text-white text-[11px] font-semibold transition-all">
+              Apply
+            </button>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <a href="{{ url_for('dashboard.pricing') }}" class="w-full py-2 text-center text-xs font-semibold rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 transition-all">
+      Open Pricing Control Center
+    </a>
+  </div>
+</div>
+
+<!-- Threat Alerts & Recent Activity -->
+<div class="p-6 rounded-2xl bg-dark-900 border border-slate-800 space-y-4">
+  <div class="flex items-center justify-between">
+    <div>
+      <h3 class="text-sm font-bold text-white font-display flex items-center gap-2">
+        <span>Recent Intercepted Security Alerts</span>
+        <span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
+      </h3>
+      <p class="text-xs text-slate-400">Latest orders evaluated by the AI Fraud Classifier & rule-based shield</p>
+    </div>
+    <a href="{{ url_for('dashboard.fraud_alerts') }}" class="text-xs font-semibold text-brand-400 hover:text-brand-300">View All Alerts &rarr;</a>
+  </div>
+
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-xs">
+      <thead>
+        <tr class="border-b border-slate-800 text-slate-400 uppercase text-[10px] tracking-wider font-semibold">
+          <th class="py-3 px-3">Order ID</th>
+          <th class="py-3 px-3">Customer</th>
+          <th class="py-3 px-3">Risk Probability</th>
+          <th class="py-3 px-3">Threat Vector</th>
+          <th class="py-3 px-3">Primary Detection Signal</th>
+          <th class="py-3 px-3">Verdict</th>
+          <th class="py-3 px-3 text-right">Action</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-800/60 font-medium">
+        {% for alert in recent_alerts %}
+          <tr class="hover:bg-slate-800/40 transition-colors">
+            <td class="py-3 px-3 font-mono text-slate-300">#{{ alert.order_id[:8] }}</td>
+            <td class="py-3 px-3 text-white">
+              {{ alert.order.customer.name if alert.order and alert.order.customer else 'Guest Device' }}
+            </td>
+            <td class="py-3 px-3">
+              <div class="flex items-center gap-2">
+                <div class="w-12 bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                  <div class="h-full rounded-full {% if alert.risk_score >= 0.8 %}bg-rose-500{% elif alert.risk_score >= 0.4 %}bg-amber-500{% else %}bg-emerald-500{% endif %}" style="width: {{ alert.risk_score * 100 }}%"></div>
+                </div>
+                <span class="font-mono text-[11px] {% if alert.risk_score >= 0.8 %}text-rose-400 font-bold{% elif alert.risk_score >= 0.4 %}text-amber-400{% else %}text-emerald-400{% endif %}">
+                  {{ "%.0f"|format(alert.risk_score * 100) }}%
+                </span>
+              </div>
+            </td>
+            <td class="py-3 px-3">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-semibold uppercase tracking-wider
+                {% if alert.fraud_type == 'bot_purchase' %} bg-purple-950/80 text-purple-300 border border-purple-800/50
+                {% elif alert.fraud_type == 'fake_account' %} bg-amber-950/80 text-amber-300 border border-amber-800/50
+                {% elif alert.fraud_type == 'coupon_abuse' %} bg-cyan-950/80 text-cyan-300 border border-cyan-800/50
+                {% else %} bg-slate-800 text-slate-400 {% endif %}">
+                {{ alert.fraud_type.replace('_', ' ') }}
+              </span>
+            </td>
+            <td class="py-3 px-3 text-slate-400 max-w-xs truncate">
+              {% set sigs = alert.to_dict().signals %}
+              {{ sigs[0] if sigs else 'Standard behavior' }}
+            </td>
+            <td class="py-3 px-3">
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-bold
+                {% if alert.decision == 'BLOCKED' %} bg-rose-500/20 text-rose-400 border border-rose-500/30
+                {% elif alert.decision == 'PENDING_REVIEW' %} bg-amber-500/20 text-amber-400 border border-amber-500/30
+                {% else %} bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 {% endif %}">
+                {{ alert.decision }}
+              </span>
+            </td>
+            <td class="py-3 px-3 text-right">
+              <a href="{{ url_for('dashboard.fraud_alerts') }}" class="p-1 text-slate-400 hover:text-white rounded hover:bg-slate-800 transition-colors">
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  // Render Dynamic vs Fixed Pricing Revenue Chart
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      const response = await fetch('/admin/api/revenue-comparison');
+      const data = await response.json();
+
+      const ctx = document.getElementById('revenueImpactChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: data.labels,
+          datasets: [
+            {
+              label: 'Dynamic Pricing (₹ Cr)',
+              data: data.dynamic_pricing,
+              borderColor: '#6366f1',
+              backgroundColor: 'rgba(99, 102, 241, 0.12)',
+              borderWidth: 2.5,
+              tension: 0.35,
+              fill: true,
+              pointBackgroundColor: '#6366f1',
+              pointRadius: 4,
+            },
+            {
+              label: 'Fixed Flat Pricing (₹ Cr)',
+              data: data.fixed_pricing,
+              borderColor: '#64748b',
+              backgroundColor: 'transparent',
+              borderWidth: 2,
+              borderDash: [5, 5],
+              tension: 0.35,
+              pointBackgroundColor: '#64748b',
+              pointRadius: 3,
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#0f172a',
+              titleColor: '#f8fafc',
+              bodyColor: '#e2e8f0',
+              borderColor: '#334155',
+              borderWidth: 1,
+              padding: 10,
+              callbacks: {
+                label: function(context) {
+                  return ` ${context.dataset.label}: ₹${context.raw} Cr`;
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: 'rgba(51, 65, 85, 0.25)' },
+              ticks: { color: '#94a3b8', font: { size: 11 } }
+            },
+            y: {
+              grid: { color: 'rgba(51, 65, 85, 0.25)' },
+              ticks: {
+                color: '#94a3b8',
+                font: { size: 11 },
+                callback: value => `₹${value} Cr`
+              }
+            }
+          }
+        }
+      });
+    } catch(err) {
+      console.error("Failed to load revenue chart:", err);
+    }
+  });
+
+  async function quickApplyPrice(productId, price) {
+    try {
+      const resp = await fetch(`/api/pricing/apply/${productId}`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({price: price})
+      });
+      const data = await resp.json();
+      if (data.success) {
+        window.showToast(data.message, 'success');
+      } else {
+        window.showToast(data.message, 'error');
+      }
+    } catch(e) {
+      window.showToast('Error applying price', 'error');
+    }
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,280 @@
+{% extends "base.html" %}
+
+{% block title %}Secure Checkout | FlashDeals AI{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+  
+  <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+    <div>
+      <h1 class="text-2xl font-bold font-display text-slate-900">Secure Order Checkout</h1>
+      <p class="text-xs text-slate-500">Every checkout is monitored in real-time by the AI Fraud Shield</p>
+    </div>
+    <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold">
+      <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+      <span>AI Fraud Shield Active</span>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    
+    <!-- Left Column: Checkout Inputs -->
+    <div class="lg:col-span-7 space-y-6">
+      
+      <!-- Customer Information Card -->
+      <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <h3 class="text-sm font-bold font-display text-slate-900 flex items-center gap-2">
+          <i data-lucide="user" class="w-4 h-4 text-brand-600"></i>
+          <span>Account & Delivery Details</span>
+        </h3>
+        
+        <div class="grid grid-cols-2 gap-3 text-xs">
+          <div>
+            <label class="block text-slate-600 font-medium mb-1">Customer Name</label>
+            <input type="text" value="{{ customer.name }}" readonly class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 font-semibold text-slate-800 outline-none">
+          </div>
+          <div>
+            <label class="block text-slate-600 font-medium mb-1">Email Address</label>
+            <input type="email" value="{{ customer.email }}" readonly class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 font-mono text-slate-800 outline-none">
+          </div>
+          <div class="col-span-2">
+            <label class="block text-slate-600 font-medium mb-1">Shipping Destination</label>
+            <input type="text" value="742 Evergreen Terrace, Suite 104, CA 94016" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 outline-none">
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment & Coupon Options -->
+      <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+        <h3 class="text-sm font-bold font-display text-slate-900 flex items-center gap-2">
+          <i data-lucide="credit-card" class="w-4 h-4 text-brand-600"></i>
+          <span>Payment Method & Discounts</span>
+        </h3>
+
+        <!-- Payment Method Selection -->
+        <div class="grid grid-cols-3 gap-3 text-xs">
+          <label class="p-3 rounded-2xl border border-brand-500 bg-brand-50/50 flex flex-col items-center justify-center gap-1.5 cursor-pointer font-bold text-slate-900 text-center">
+            <input type="radio" name="payment_method" value="Card" checked class="hidden">
+            <i data-lucide="credit-card" class="w-5 h-5 text-brand-600"></i>
+            <span>Card</span>
+          </label>
+          <label class="p-3 rounded-2xl border border-slate-200 hover:border-brand-500 flex flex-col items-center justify-center gap-1.5 cursor-pointer font-bold text-slate-900 text-center">
+            <input type="radio" name="payment_method" value="UPI" class="hidden">
+            <i data-lucide="smartphone" class="w-5 h-5 text-indigo-600"></i>
+            <span>UPI</span>
+          </label>
+          <label class="p-3 rounded-2xl border border-slate-200 hover:border-brand-500 flex flex-col items-center justify-center gap-1.5 cursor-pointer font-bold text-slate-900 text-center">
+            <input type="radio" name="payment_method" value="COD" class="hidden">
+            <i data-lucide="banknote" class="w-5 h-5 text-emerald-600"></i>
+            <span>COD</span>
+          </label>
+        </div>
+
+        <!-- Coupon Input -->
+        <div class="space-y-1.5 pt-2">
+          <label class="block text-xs font-semibold text-slate-700">Promo / Flash Coupon Code</label>
+          <div class="flex gap-2">
+            <input type="text" id="coupon-input" placeholder="e.g. FLASH20, SAVE10" class="flex-1 px-3.5 py-2 rounded-xl bg-slate-50 border border-slate-200 font-mono text-xs uppercase outline-none focus:border-brand-500">
+            <button type="button" onclick="applyCouponCode()" class="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs">Apply</button>
+          </div>
+          <!-- Coupon Quick Suggestions -->
+          <div class="flex items-center gap-2 pt-1 text-[11px] text-slate-500">
+            <span>Demo Coupons:</span>
+            <button type="button" onclick="document.getElementById('coupon-input').value='FLASH20'" class="underline hover:text-brand-600 font-mono">FLASH20</button>
+            <button type="button" onclick="document.getElementById('coupon-input').value='SAVE10'" class="underline hover:text-brand-600 font-mono">SAVE10</button>
+            <button type="button" onclick="document.getElementById('coupon-input').value='SPAM_EXPLOIT_BOT'" class="underline text-rose-600 font-mono" title="Inject coupon abuse fraud trigger">SPAM_BOT (Fraud test)</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Right Column: Order Summary & Placement -->
+    <div class="lg:col-span-5 bg-white rounded-3xl border border-slate-200/90 shadow-sm p-6 space-y-6">
+      <h3 class="text-base font-bold font-display text-slate-900">Items in Order</h3>
+
+      <div class="space-y-3 max-h-48 overflow-y-auto divide-y divide-slate-100 text-xs">
+        {% for item in cart_items %}
+          <div class="pt-2 flex items-center justify-between">
+            <div class="min-w-0">
+              <div class="font-bold text-slate-900 truncate">{{ item.product.name }}</div>
+              <div class="text-slate-500 text-[11px]">Qty: {{ item.quantity }} × {{ item.product.current_price | currency }}</div>
+            </div>
+            <span class="font-mono font-bold text-slate-900">{{ item.item_total | currency }}</span>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="pt-4 border-t border-slate-100 space-y-2 text-xs">
+        <div class="flex justify-between text-slate-600">
+          <span>Subtotal:</span>
+          <span class="font-mono font-bold text-slate-800" id="checkout-subtotal">{{ subtotal | currency }}</span>
+        </div>
+        <div class="flex justify-between text-emerald-600 font-semibold" id="discount-row" style="display: none;">
+          <span>Coupon Discount:</span>
+          <span class="font-mono" id="discount-val">-$0.00</span>
+        </div>
+        <div class="flex justify-between text-slate-600">
+          <span>Shipping:</span>
+          <span class="text-emerald-600 font-bold">FREE</span>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex justify-between text-base font-black text-slate-900">
+          <span>Total:</span>
+          <span class="font-mono text-lg text-slate-900" id="checkout-total">{{ subtotal | currency }}</span>
+        </div>
+      </div>
+
+      <button onclick="submitOrderCheckout()" id="btn-place-order"
+        class="w-full py-4 px-4 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-xl shadow-brand-500/25 flex items-center justify-center gap-2 transition-all active:scale-98">
+        <i data-lucide="lock" class="w-4 h-4"></i>
+        <span>Place Order & Run AI Screening</span>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- Real-Time AI Fraud Screening Verdict Modal -->
+<div id="verdict-modal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+  <div class="bg-white rounded-3xl border border-slate-200 max-w-md w-full p-6 shadow-2xl space-y-4 text-center">
+    <div id="verdict-icon-container" class="w-16 h-16 rounded-3xl mx-auto flex items-center justify-center shadow-lg">
+      <!-- Injected dynamically -->
+    </div>
+
+    <div class="space-y-1">
+      <h3 class="text-xl font-bold font-display text-slate-900" id="verdict-title">Screening Verdict</h3>
+      <p class="text-xs text-slate-500" id="verdict-message">Order telemetry evaluated by AI Fraud Model</p>
+    </div>
+
+    <!-- Telemetry Badges -->
+    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-left space-y-2 text-xs" id="verdict-telemetry">
+      <!-- Injected dynamically -->
+    </div>
+
+    <div class="pt-2">
+      <button onclick="closeVerdictAndRedirect()" id="btn-verdict-action" class="w-full py-3 px-4 rounded-xl font-bold text-xs text-white bg-slate-900 hover:bg-slate-800 transition-all">
+        View My Orders &rarr;
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  let appliedDiscountRate = 0.0;
+  const baseSubtotal = {{ subtotal }};
+
+  function applyCouponCode() {
+    const code = document.getElementById('coupon-input').value.trim().toUpperCase();
+    if (!code) return;
+
+    if (code.includes('FLASH20')) {
+      appliedDiscountRate = 0.20;
+      window.showToast("Coupon 'FLASH20' applied (-20%)!", "success");
+    } else if (code.includes('SAVE10')) {
+      appliedDiscountRate = 0.10;
+      window.showToast("Coupon 'SAVE10' applied (-10%)!", "success");
+    } else if (code.includes('SPAM') || code.includes('BOT')) {
+      appliedDiscountRate = 0.50;
+      window.showToast("Promo code entered (High-risk signature)", "info");
+    } else {
+      appliedDiscountRate = 0.05;
+      window.showToast("Coupon applied (-5%)", "success");
+    }
+
+    const discountAmount = baseSubtotal * appliedDiscountRate;
+    const finalTotal = Math.max(1.0, baseSubtotal - discountAmount);
+
+    document.getElementById('discount-row').style.display = 'flex';
+    document.getElementById('discount-val').textContent = `-₹${discountAmount.toFixed(2)}`;
+    document.getElementById('checkout-total').textContent = `₹${finalTotal.toFixed(2)}`;
+  }
+
+  async function submitOrderCheckout() {
+    const btn = document.getElementById('btn-place-order');
+    btn.disabled = true;
+    btn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i><span>Screening with AI Fraud Shield...</span>`;
+    lucide.createIcons();
+
+    const coupon = document.getElementById('coupon-input').value.trim();
+    const payRadio = document.querySelector('input[name="payment_method"]:checked');
+    const paymentMethod = payRadio ? payRadio.value : 'Card';
+
+    try {
+      const resp = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          coupon_code: coupon,
+          payment_method: paymentMethod,
+          simulated_burst: (coupon.includes('BOT') || coupon.includes('SPAM')) ? 6 : 1
+        })
+      });
+      const data = await resp.json();
+      showVerdictModal(data);
+    } catch(err) {
+      window.showToast('Checkout failed: ' + err.message, 'error');
+      btn.disabled = false;
+      btn.innerHTML = `<i data-lucide="lock" class="w-4 h-4"></i><span>Place Order & Run AI Screening</span>`;
+      lucide.createIcons();
+    }
+  }
+
+  function showVerdictModal(data) {
+    const modal = document.getElementById('verdict-modal');
+    const iconContainer = document.getElementById('verdict-icon-container');
+    const title = document.getElementById('verdict-title');
+    const msg = document.getElementById('verdict-message');
+    const telemetry = document.getElementById('verdict-telemetry');
+    const btn = document.getElementById('btn-verdict-action');
+
+    modal.classList.remove('hidden');
+
+    if (data.decision === 'APPROVED') {
+      iconContainer.className = "w-16 h-16 rounded-3xl mx-auto flex items-center justify-center bg-emerald-100 text-emerald-600 shadow-emerald-500/20";
+      iconContainer.innerHTML = `<i data-lucide="check-circle-2" class="w-8 h-8"></i>`;
+      title.textContent = "Order Approved!";
+      msg.textContent = data.message;
+      btn.className = "w-full py-3 px-4 rounded-xl font-bold text-xs text-white bg-emerald-600 hover:bg-emerald-700 transition-all";
+    } else if (data.decision === 'PENDING_REVIEW') {
+      iconContainer.className = "w-16 h-16 rounded-3xl mx-auto flex items-center justify-center bg-amber-100 text-amber-600 shadow-amber-500/20";
+      iconContainer.innerHTML = `<i data-lucide="alert-triangle" class="w-8 h-8"></i>`;
+      title.textContent = "Security Review Triggered";
+      msg.textContent = data.message;
+      btn.className = "w-full py-3 px-4 rounded-xl font-bold text-xs text-white bg-amber-600 hover:bg-amber-700 transition-all";
+    } else {
+      iconContainer.className = "w-16 h-16 rounded-3xl mx-auto flex items-center justify-center bg-rose-100 text-rose-600 shadow-rose-500/20";
+      iconContainer.innerHTML = `<i data-lucide="shield-alert" class="w-8 h-8"></i>`;
+      title.textContent = "Threat Intercepted & Blocked";
+      msg.textContent = data.message;
+      btn.className = "w-full py-3 px-4 rounded-xl font-bold text-xs text-white bg-rose-600 hover:bg-rose-700 transition-all";
+    }
+
+    let signalsHtml = '';
+    if (data.signals && data.signals.length > 0) {
+      signalsHtml = data.signals.map(s => `<div class="text-[11px] text-slate-700 flex items-start gap-1.5"><i data-lucide="info" class="w-3.5 h-3.5 text-brand-600 mt-0.5 flex-shrink-0"></i><span>${s}</span></div>`).join('');
+    }
+
+    telemetry.innerHTML = `
+      <div class="flex justify-between items-center text-slate-600 border-b border-slate-200/60 pb-1.5">
+        <span>AI Risk Score:</span>
+        <span class="font-mono font-bold ${(data.risk_score >= 0.8) ? 'text-rose-600' : (data.risk_score >= 0.4 ? 'text-amber-600' : 'text-emerald-600')}">${(data.risk_score * 100).toFixed(0)}% Risk</span>
+      </div>
+      <div class="flex justify-between items-center text-slate-600 border-b border-slate-200/60 pb-1.5">
+        <span>Threat Category:</span>
+        <span class="font-semibold text-slate-900 uppercase text-[10px]">${data.fraud_type.replace('_', ' ')}</span>
+      </div>
+      <div class="pt-1 space-y-1">
+        <span class="font-semibold text-slate-700 text-[10px] uppercase">Shield Signals:</span>
+        ${signalsHtml}
+      </div>
+    `;
+
+    lucide.createIcons();
+  }
+
+  function closeVerdictAndRedirect() {
+    window.location.href = "{{ url_for('orders.my_orders') }}";
+  }
+</script>
+{% endblock %}

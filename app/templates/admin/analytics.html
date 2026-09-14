@@ -1,0 +1,131 @@
+{% extends "admin/layout.html" %}
+
+{% block admin_title %}Flash Sale & Demand Analytics{% endblock %}
+{% block admin_subtitle %}High-Frequency Demand Curves & Category Performance{% endblock %}
+
+{% block admin_content %}
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+  
+  <!-- Flash Sale Hourly Demand Curve -->
+  <div class="lg:col-span-2 p-6 rounded-2xl bg-dark-900 border border-slate-800 space-y-4">
+    <div class="flex items-center justify-between">
+      <div>
+        <h3 class="text-sm font-bold text-white font-display">Flash Sale Hourly Demand Velocity</h3>
+        <p class="text-xs text-slate-400">Order placement velocity (orders/minute) across active flash sale hours</p>
+      </div>
+      <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-brand-500/20 text-brand-400 border border-brand-500/30">Peak Surge Detection</span>
+    </div>
+    <div class="relative h-72 w-full">
+      <canvas id="demandVelocityChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Category Share Chart -->
+  <div class="p-6 rounded-2xl bg-dark-900 border border-slate-800 space-y-4">
+    <div>
+      <h3 class="text-sm font-bold text-white font-display">Revenue by Category</h3>
+      <p class="text-xs text-slate-400">Sales volume distribution</p>
+    </div>
+    <div class="relative h-60 w-full">
+      <canvas id="categoryShareChart"></canvas>
+    </div>
+    <div class="pt-2 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
+      <span>Top Performer: <strong class="text-white">Electronics</strong></span>
+      <span class="text-emerald-400 font-bold">+28% YoY</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- Category Performance Table -->
+<div class="p-6 rounded-2xl bg-dark-900 border border-slate-800 space-y-4">
+  <h3 class="text-sm font-bold text-white font-display">Category Performance Breakdown</h3>
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-xs">
+      <thead>
+        <tr class="border-b border-slate-800 text-slate-400 uppercase text-[10px] tracking-wider font-semibold">
+          <th class="py-3 px-3">Product Category</th>
+          <th class="py-3 px-3">Total Orders</th>
+          <th class="py-3 px-3">Gross Revenue</th>
+          <th class="py-3 px-3">Avg Order Value</th>
+          <th class="py-3 px-3 text-right">Performance Index</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-800/60 font-medium">
+        {% for cat in category_data %}
+          <tr class="hover:bg-slate-800/40 transition-colors">
+            <td class="py-3 px-3 font-bold text-white">{{ cat.category }}</td>
+            <td class="py-3 px-3 font-mono text-slate-300">{{ cat.orders }}</td>
+            <td class="py-3 px-3 font-mono font-bold text-emerald-400">{{ cat.revenue | currency }}</td>
+            <td class="py-3 px-3 font-mono text-slate-300">
+              {{ (cat.revenue / cat.orders if cat.orders > 0 else 0) | currency }}
+            </td>
+            <td class="py-3 px-3 text-right">
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-brand-500/20 text-brand-400 border border-brand-500/30">
+                Optimal Elasticity
+              </span>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Demand Velocity Curve
+    const demandCtx = document.getElementById('demandVelocityChart').getContext('2d');
+    new Chart(demandCtx, {
+      type: 'line',
+      data: {
+        labels: ['12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00'],
+        datasets: [{
+          label: 'Orders per Minute',
+          data: [14, 28, 65, 120, 185, 210, 160, 95, 80, 110, 145],
+          borderColor: '#f59e0b',
+          backgroundColor: 'rgba(245, 158, 11, 0.15)',
+          fill: true,
+          tension: 0.4,
+          borderWidth: 2.5,
+          pointBackgroundColor: '#f59e0b'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { color: 'rgba(51, 65, 85, 0.2)' }, ticks: { color: '#94a3b8' } },
+          y: { grid: { color: 'rgba(51, 65, 85, 0.2)' }, ticks: { color: '#94a3b8' } }
+        }
+      }
+    });
+
+    // 2. Category Share Doughnut
+    const catCtx = document.getElementById('categoryShareChart').getContext('2d');
+    new Chart(catCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Electronics', 'Health & Beauty', 'Office Supplies', 'Books & Media', 'Home'],
+        datasets: [{
+          data: [35, 25, 18, 12, 10],
+          backgroundColor: ['#6366f1', '#10b981', '#f59e0b', '#ec4899', '#06b6d4'],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { color: '#94a3b8', font: { size: 10 }, boxWidth: 10 } }
+        },
+        cutout: '70%'
+      }
+    });
+  });
+</script>
+{% endblock %}

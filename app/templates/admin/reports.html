@@ -1,0 +1,76 @@
+{% extends "admin/layout.html" %}
+
+{% block admin_title %}Compliance Reports & Data Exports{% endblock %}
+{% block admin_subtitle %}Generate CSV Audit Logs & Performance Summaries{% endblock %}
+
+{% block admin_content %}
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  
+  <!-- Dynamic Pricing Audit Report -->
+  <div class="p-6 rounded-2xl bg-dark-900 border border-slate-800 space-y-4 flex flex-col justify-between hover:border-slate-700 transition-all">
+    <div class="space-y-2">
+      <div class="p-2.5 w-fit rounded-xl bg-emerald-500/10 text-emerald-400">
+        <i data-lucide="trending-up" class="w-5 h-5"></i>
+      </div>
+      <h3 class="text-sm font-bold text-white font-display">Dynamic Pricing Report</h3>
+      <p class="text-xs text-slate-400">Complete catalog export of base price, cost price floor, active flash discounts, and stock quantities.</p>
+    </div>
+    <div class="pt-4 border-t border-slate-800 space-y-3">
+      <div class="flex justify-between text-xs text-slate-400">
+        <span>Logged Price Changes:</span>
+        <span class="font-mono text-white">{{ price_logs_count }} Records</span>
+      </div>
+      <a href="{{ url_for('dashboard.export_csv', type='pricing') }}" 
+        class="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-all">
+        <i data-lucide="download" class="w-3.5 h-3.5 text-emerald-400"></i>
+        <span>Download Pricing CSV</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Fraud Detection Audit Trail -->
+  <div class="p-6 rounded-2xl bg-dark-900 border border-slate-800 space-y-4 flex flex-col justify-between hover:border-slate-700 transition-all">
+    <div class="space-y-2">
+      <div class="p-2.5 w-fit rounded-xl bg-rose-500/10 text-rose-400">
+        <i data-lucide="shield-alert" class="w-5 h-5"></i>
+      </div>
+      <h3 class="text-sm font-bold text-white font-display">Fraud Shield Audit Trail</h3>
+      <p class="text-xs text-slate-400">Audit trail of all flagged and blocked transactions, explainable signal traces, and admin review decisions.</p>
+    </div>
+    <div class="pt-4 border-t border-slate-800 space-y-3">
+      <div class="flex justify-between text-xs text-slate-400">
+        <span>Threats Intercepted:</span>
+        <span class="font-mono text-rose-400 font-bold">{{ blocked_count }} Blocked</span>
+      </div>
+      <a href="{{ url_for('dashboard.export_csv', type='fraud') }}" 
+        class="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-all">
+        <i data-lucide="download" class="w-3.5 h-3.5 text-rose-400"></i>
+        <span>Download Fraud Audit CSV</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Executive Performance Summary -->
+  <div class="p-6 rounded-2xl bg-dark-900 border border-slate-800 space-y-4 flex flex-col justify-between hover:border-slate-700 transition-all">
+    <div class="space-y-2">
+      <div class="p-2.5 w-fit rounded-xl bg-brand-500/10 text-brand-400">
+        <i data-lucide="file-check" class="w-5 h-5"></i>
+      </div>
+      <h3 class="text-sm font-bold text-white font-display">Executive Summary Report</h3>
+      <p class="text-xs text-slate-400">High-level KPIs, gross revenue, flash-sale velocity, and AI accuracy metrics formatted for reporting.</p>
+    </div>
+    <div class="pt-4 border-t border-slate-800 space-y-3">
+      <div class="flex justify-between text-xs text-slate-400">
+        <span>Approved Revenue:</span>
+        <span class="font-mono text-emerald-400 font-bold">{{ total_sales | currency }}</span>
+      </div>
+      <a href="{{ url_for('dashboard.export_csv', type='summary') }}" 
+        class="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white text-xs font-bold shadow-md transition-all">
+        <i data-lucide="download" class="w-3.5 h-3.5"></i>
+        <span>Download Executive CSV</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

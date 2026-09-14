@@ -1,0 +1,271 @@
+id,name,category,base_price,cost_price,current_price,stock_quantity,popularity_score,created_at
+bf510978-425c-4e2f-b4ee-1a1e61011389,OnePlus Nord CE4 5G Smartphone (128GB),Electronics,23822.32,18582.15,21916.46,221,0.04,2022-03-18
+420b9f94-6098-4302-afa6-2ec9093f8267,boAt Rockerz 450 Bluetooth Wireless Headphones,Electronics,2776.67,882.22,1392.05,462,0.56,2022-04-19
+222b328f-b6bf-444c-9463-f49a8f440adb,Samsung 43-inch Crystal 4K UHD Smart TV,Electronics,42662.47,27737.54,31994.19,353,0.7,2022-11-25
+c19a2ed3-0577-4c6c-821d-e1ce0d0e2326,Noise ColorFit Pulse 3 Smartwatch (Bluetooth Calling),Electronics,5389.62,1185.95,1831.76,118,0.46,2023-03-21
+d40ef758-8bd5-45f7-91ca-4e54bb3c02ad,Mi Power Bank 3i 20000mAh Fast Charging (18W),Electronics,2305.06,1257.88,1885.77,327,0.02,2022-06-30
+fe643978-5f95-42ce-a5d2-c1e315a596f2,HP 15s Intel Core i5 12th Gen Laptop (16GB/512GB SSD),Electronics,60842.55,45381.8,51559.91,154,0.47,2024-08-04
+6ab60c13-be3f-4b25-ae4e-89d750dba382,Realme Buds Air 5 ANC True Wireless Earbuds,Electronics,4777.0,2102.3,3152.49,453,0.54,2022-03-04
+1ac45684-b9ac-4390-8ce2-3bb6f6ba4241,SanDisk Ultra 128GB MicroSDXC Memory Card,Electronics,1907.34,688.76,952.61,440,0.1,2025-12-19
+d032273b-494c-4f06-97f4-d6d611479a19,Zebronics 2.1 Channel Bluetooth Soundbar with Subwoofer,Electronics,7023.05,2809.62,4012.74,156,0.73,2025-04-29
+153aa701-869f-48a6-be63-84e5f05d105e,Logitech B170 Wireless Optical Mouse,Electronics,849.68,398.73,568.67,333,0.66,2025-03-18
+32064b33-4be1-4ab7-8eff-3279f99bb356,Fire-Boltt Ninja Call Pro Plus 1.83 Smartwatch,Electronics,8165.1,1019.74,1325.97,112,0.3,2022-07-17
+74b78229-10b6-451d-894d-b53b53a3ec65,Sony WH-CH520 Wireless Bluetooth Headphones (50hr Battery),Electronics,4642.39,2884.05,3712.05,339,0.57,2022-07-21
+3527f08e-a57e-4d91-be68-b8ce16bf754c,"Apple iPhone 15 (128 GB, Black)",Electronics,79793.16,61917.09,69905.39,410,0.56,2025-05-21
+64d1384f-69fd-4622-8300-57de2e054d95,Xiaomi Smart Band 8 with AMOLED Display,Electronics,4289.27,1930.65,2680.39,187,0.2,2021-11-12
+c87729bb-0b29-4f78-a7a4-dc5ee1b2c70e,TP-Link Archer C6 AC1200 Dual Band Gigabit Wi-Fi Router,Electronics,3248.25,1485.34,2041.41,256,0.69,2023-07-04
+cc432fbe-eb50-4757-a9df-a26235191136,Levi's Men Slim Fit Washed Denim Jeans,Fashion & Apparel,3774.45,1510.21,2372.11,142,0.57,2023-09-09
+1224dcb9-7363-43d1-a356-53ec4c76eeb2,BIBA Women Printed A-Line Cotton Kurti,Fashion & Apparel,2674.24,802.59,1390.09,74,0.58,2023-01-01
+4d655a53-f024-4b40-8649-104f76d856ef,Puma Men Smashic Casual White Sneakers,Fashion & Apparel,4229.46,1504.14,2114.26,239,0.07,2021-11-09
+1969fa03-7785-4618-b0d3-3bd4c05f55f9,FabIndia Men Handloom Cotton Kurta,Fashion & Apparel,2084.19,758.23,1420.73,129,0.02,2023-12-27
+549117c0-70d2-486c-bb17-93cf125a8912,Roadster Men Graphic Printed Pure Cotton T-Shirt,Fashion & Apparel,1006.81,282.19,502.9,403,0.8,2025-06-18
+d4b56b16-f7b1-48ec-a302-ef296defa4bf,Allen Solly Men Regular Fit Formal Cotton Shirt,Fashion & Apparel,2302.87,890.15,1465.08,252,0.66,2024-08-17
+f73def59-7ec1-44b8-bc45-9de4755e7792,W for Woman Solid Rayon Straight Palazzos,Fashion & Apparel,1618.64,476.35,856.48,109,0.45,2024-01-19
+7a43dcb5-f661-4eee-bba6-d123bb2d7310,Fastrack Casual Daypack Backpack (28 Litres),Fashion & Apparel,1997.37,650.77,1000.19,464,0.72,2026-05-27
+6b21e6a5-1027-44b6-a1dd-b1ec49d31f35,Aurelia Women Embroidered Chanderi Silk Dupatta,Fashion & Apparel,1481.31,415.04,740.16,169,0.89,2022-05-18
+3f29e0e3-6773-4cd1-bc3d-05df56183ad9,Red Tape Men Memory Foam Running Shoes,Fashion & Apparel,5470.03,1193.68,1640.31,85,0.02,2023-05-03
+ad1f41c0-f53c-435d-b404-a2fe4e233ed0,Janasya Women Poly Silk Kurta with Pant Set,Fashion & Apparel,3027.1,851.64,1323.83,177,0.54,2024-08-22
+3027d2a8-4084-4a13-b912-a1e3c36d2415,Peter England Men Classic Fit Chinos Trousers,Fashion & Apparel,1902.26,713.7,1140.98,275,0.31,2022-12-19
+fd4b61ad-34a5-4df8-aeb2-885c74b98c68,Manyavar Men Jacquard Silk Festive Kurta Pajama Set,Fashion & Apparel,4938.23,1876.9,3456.46,106,0.15,2022-03-22
+8193f07b-ad50-4756-8756-e3ac592ec4c4,Prestige Iris 750W Mixer Grinder (3 Stainless Steel Jars),Home & Kitchen,4571.13,2135.57,2948.1,184,0.32,2024-01-16
+2258402e-1684-4d4c-b781-68dea8bc536f,Milton Thermosteel Duo 1000ml Insulated Water Bottle,Home & Kitchen,1157.35,532.67,822.25,447,0.07,2023-10-19
+1f11267e-a25a-4d12-a3d9-33aaa886755d,Pigeon Non-Stick 3-Piece Kitchen Cookware Set,Home & Kitchen,2424.28,860.39,1213.66,448,0.67,2022-01-30
+664fe812-aa0e-4874-9870-b84e29797e7a,Kent Grand RO+UV Water Purifier with Mineral ROTM (8L),Home & Kitchen,20959.3,12360.62,15584.05,281,0.05,2023-11-01
+8f810e22-2355-4472-934e-928dfb262b68,Solimo Queen Size 100% Cotton Floral Bedsheet with 2 Pillows,Home & Kitchen,1714.0,571.33,856.05,344,0.72,2026-03-23
+481e54b7-6d4f-4f98-8884-52eeb5094235,Philips Daily Collection 1.5L Electric Kettle (HD9306),Home & Kitchen,2851.28,1163.79,1797.52,393,0.22,2025-09-25
+663550d4-2ba3-48f6-9c16-bdf8a1489f11,Bajaj New Shakti 15L Storage Water Heater (Geyser),Home & Kitchen,9920.02,4785.54,5980.93,61,0.14,2023-03-30
+0c574cc0-f7b5-4da0-aaa0-6be742dec6cd,Hawkins Contura 3L Hard Anodised Pressure Cooker,Home & Kitchen,2305.15,1340.2,1875.21,219,0.81,2024-05-01
+24b2a7fb-1e09-4699-8521-c9b92276e74f,Cello Opalware Dazzle Tropical Lagoon Dinner Set (18 Pcs),Home & Kitchen,2438.95,928.66,1367.57,84,0.81,2024-07-12
+9d0f81b6-1eb7-45af-b116-d964c38b301d,Story@Home Blackout 7ft Eyelet Door Curtains (Set of 2),Home & Kitchen,1959.89,588.26,881.41,392,0.54,2024-02-19
+fbd78605-855c-400f-a106-2b08b71fd5e6,Indian Polity by M. Laxmikanth (7th Edition),Books & Media,990.34,447.89,645.96,94,0.54,2024-05-13
+d24ddc34-f07f-425c-a387-13f751844995,Atomic Habits by James Clear (Paperback),Books & Media,789.12,276.54,443.45,468,0.75,2022-06-18
+abcd8b64-07ce-4d92-b713-86143971f45d,UPSC General Studies Paper 1 Manual by McGraw Hill,Books & Media,1475.38,661.38,1016.49,134,1.0,2026-07-25
+91fb77ed-a612-4c77-a458-5350c7297b30,Rich Dad Poor Dad (English / Hindi Edition),Books & Media,493.69,178.08,295.82,78,0.23,2022-07-31
+1f28e386-21d1-4d45-a7b8-0c0c312b519b,NCERT Complete Class 10 & 12 Science/Maths Set,Books & Media,1748.14,755.95,1227.48,301,0.3,2024-03-25
+93dd4b7d-d8a5-4b31-958e-c35862c9e670,Word Power Made Easy by Norman Lewis,Books & Media,320.71,96.53,181.27,167,0.72,2025-07-13
+d1854dc1-18c9-4830-bb40-67d4f703bed6,Ikigai: The Japanese Secret to a Long and Happy Life,Books & Media,548.42,189.45,319.08,63,0.08,2023-07-17
+b915780b-dca1-4fe0-9d41-bb1eed101603,Quantitative Aptitude for Competitive Exams by R.S. Aggarwal,Books & Media,911.67,406.34,604.31,80,0.2,2025-02-27
+7ff1dee9-fe1a-4ff6-a175-08dd9bf880ff,The Psychology of Money by Morgan Housel,Books & Media,493.2,177.91,285.64,52,0.17,2025-10-04
+37ecd832-dde0-4208-adac-38aa16b841e4,Mamaearth Vitamin C Face Wash with Turmeric (150ml),Health & Beauty,372.39,130.66,260.4,482,0.62,2022-06-29
+76f54a22-ebda-4d31-a61e-b298d7613933,Himalaya Purifying Neem Face Wash (400ml),Health & Beauty,452.64,191.71,318.44,113,0.32,2024-09-18
+1fa92a73-ee85-460f-99ab-6de0b6c17fcd,Biotique Bio Kelp Protein Anti-Hair Fall Shampoo (650ml),Health & Beauty,571.14,203.29,357.21,80,0.11,2022-08-09
+1179bbd5-6733-43fb-8828-c236947707b7,The Derma Co 10% Niacinamide Serum with Zinc (30ml),Health & Beauty,602.57,241.43,451.67,131,0.33,2024-07-19
+f0e1dc90-af8a-407d-94e0-ac88ed7521df,Wow Skin Science Red Onion Black Seed Hair Oil (200ml),Health & Beauty,604.07,191.61,351.95,139,0.65,2024-07-16
+027782ef-444d-485e-9393-ea15042f21c4,Minimalist 10% Vitamin C Serum for Glowing Skin (30ml),Health & Beauty,662.73,293.91,520.51,188,0.35,2025-03-07
+f09a5064-6734-4fc9-afb2-7017aa97b41b,Nivea Soft Light Moisturizer Cream (300ml),Health & Beauty,539.48,225.6,377.64,356,0.92,2025-02-14
+bdca8fe6-4b28-4c0d-bbe7-df8f75af8504,Dettol Original Liquid Handwash Refill Pouch (1500ml),Health & Beauty,338.16,155.03,241.26,272,1.0,2022-05-14
+73cfea33-1c89-46fb-ba4c-3847c81ccfec,OnePlus Nord CE4 5G Smartphone (128GB) (Edition 2),Electronics,24131.94,18823.66,22201.31,87,0.67,2021-09-06
+5786ea61-e554-4f65-b6b7-c3f4fd0a8927,boAt Rockerz 450 Bluetooth Wireless Headphones (Edition 2),Electronics,3019.73,959.45,1513.9,345,0.43,2022-12-13
+7b5ee361-759b-4a1c-8cbe-97b89b90a54f,Samsung 43-inch Crystal 4K UHD Smart TV (Edition 2),Electronics,39867.43,25920.31,29898.08,164,0.21,2026-08-06
+a98f12bd-957d-4077-ae21-d0fdfc83e87e,Noise ColorFit Pulse 3 Smartwatch (Bluetooth Calling) (Edition 2),Electronics,4865.61,1070.65,1653.67,158,0.21,2024-06-03
+150768b7-82b4-4961-8929-d2ff2adc8035,Mi Power Bank 3i 20000mAh Fast Charging (18W) (Edition 2),Electronics,2274.6,1241.25,1860.85,171,0.38,2024-01-07
+311dac97-650a-4d34-a3a1-e66a8ac4384b,HP 15s Intel Core i5 12th Gen Laptop (16GB/512GB SSD) (Edition 2),Electronics,56118.04,41857.84,47556.21,97,0.79,2024-08-11
+3868f824-bfd8-43dc-9d6d-1b95e3811aa7,Realme Buds Air 5 ANC True Wireless Earbuds (Edition 2),Electronics,5331.84,2346.48,3518.65,181,0.15,2022-02-08
+c95876ff-0236-4bdc-b0dd-808f6611f85e,SanDisk Ultra 128GB MicroSDXC Memory Card (Edition 2),Electronics,1657.2,598.43,827.68,411,0.57,2024-10-08
+c9bfdc2b-ac03-4730-8137-42035b88aaea,Zebronics 2.1 Channel Bluetooth Soundbar with Subwoofer (Edition 2),Electronics,7404.0,2962.02,4230.4,192,0.72,2023-05-17
+0c2c12c9-4433-4a88-9241-e78eae060a16,Logitech B170 Wireless Optical Mouse (Edition 2),Electronics,927.99,435.48,621.08,481,0.8,2025-04-09
+9e031026-947d-4b91-aa84-1671535cafbe,Fire-Boltt Ninja Call Pro Plus 1.83 Smartwatch (Edition 2),Electronics,7838.07,978.9,1272.87,227,0.38,2022-12-18
+bb25e039-8d91-43c9-bb65-ba840cda9540,Sony WH-CH520 Wireless Bluetooth Headphones (50hr Battery) (Edition 2),Electronics,4913.8,3052.66,3929.07,421,0.02,2023-06-23
+5e9a4ed5-7cff-4ac0-bb88-a5a34193e174,"Apple iPhone 15 (128 GB, Black) (Edition 2)",Electronics,78823.85,61164.94,69056.2,442,0.3,2026-02-08
+2a453898-f1a1-45bf-8661-ee444eea9f84,Xiaomi Smart Band 8 with AMOLED Display (Edition 2),Electronics,3931.59,1769.66,2456.88,138,0.11,2024-09-01
+7ee4cf4a-b359-4cba-9b47-455b65638cba,TP-Link Archer C6 AC1200 Dual Band Gigabit Wi-Fi Router (Edition 2),Electronics,3634.59,1662.0,2284.21,353,0.96,2023-08-12
+8097f01f-d432-45af-9e66-d5ccfd2bc5ba,Levi's Men Slim Fit Washed Denim Jeans (Edition 2),Fashion & Apparel,3434.08,1374.02,2158.2,262,0.51,2024-08-03
+663654e6-d5c3-4e54-8c51-0a1898edd362,BIBA Women Printed A-Line Cotton Kurti (Edition 2),Fashion & Apparel,2422.16,726.94,1259.06,161,0.46,2021-11-04
+aaf74c9c-306a-4e12-a320-81f5f6921883,Puma Men Smashic Casual White Sneakers (Edition 2),Fashion & Apparel,4849.94,1724.81,2424.43,117,0.37,2023-04-24
+04d44bd0-d3c8-4103-8601-6ed59b7bee73,FabIndia Men Handloom Cotton Kurta (Edition 2),Fashion & Apparel,2048.14,745.12,1396.16,232,0.99,2022-03-02
+943ffcd6-1000-4246-a0a2-db3572b827a6,Roadster Men Graphic Printed Pure Cotton T-Shirt (Edition 2),Fashion & Apparel,1060.54,297.25,529.74,212,0.78,2021-10-23
+b608f327-52ca-430b-8121-bdb804215792,Allen Solly Men Regular Fit Formal Cotton Shirt (Edition 2),Fashion & Apparel,2372.27,916.98,1509.24,335,0.08,2023-05-08
+33322789-79ee-4011-ac4c-076a66887e86,W for Woman Solid Rayon Straight Palazzos (Edition 2),Fashion & Apparel,1596.92,469.96,844.98,476,0.15,2022-07-07
+40087156-1b95-40e1-b4d0-5b27a5a4a55c,Fastrack Casual Daypack Backpack (28 Litres) (Edition 2),Fashion & Apparel,2132.94,694.94,1068.07,128,0.35,2022-05-30
+d834722f-5722-4955-a97f-1171c3722322,Aurelia Women Embroidered Chanderi Silk Dupatta (Edition 2),Fashion & Apparel,1418.02,397.31,708.54,494,0.23,2024-06-14
+64e7a46f-dd0e-480f-b3ae-90009a80c9d8,Red Tape Men Memory Foam Running Shoes (Edition 2),Fashion & Apparel,5730.35,1250.49,1718.38,306,0.01,2025-11-04
+a42bea13-6e3e-47ae-93f3-c688351f3f2b,Janasya Women Poly Silk Kurta with Pant Set (Edition 2),Fashion & Apparel,3432.96,965.82,1501.32,140,0.37,2023-03-17
+58ba2324-9820-4979-a49b-ed53fab87ae5,Peter England Men Classic Fit Chinos Trousers (Edition 2),Fashion & Apparel,2085.76,782.55,1251.04,167,0.24,2023-07-24
+0ddccaed-3349-4fa1-8339-9b1774bd02c4,Manyavar Men Jacquard Silk Festive Kurta Pajama Set (Edition 2),Fashion & Apparel,5200.22,1976.48,3639.84,188,0.31,2025-08-19
+6a6f7b18-8a5a-48f0-8e1d-31a64e9361d4,Prestige Iris 750W Mixer Grinder (3 Stainless Steel Jars) (Edition 2),Home & Kitchen,4386.1,2049.12,2828.76,225,0.41,2026-03-17
+50bac632-f1ec-4e8f-8232-54d18724d835,Milton Thermosteel Duo 1000ml Insulated Water Bottle (Edition 2),Home & Kitchen,1234.99,568.4,877.41,216,0.41,2024-07-28
+c6da35aa-c78c-4537-acad-206c8644931c,Pigeon Non-Stick 3-Piece Kitchen Cookware Set (Edition 2),Home & Kitchen,2446.72,868.36,1224.89,103,0.05,2025-12-18
+86914300-7c5b-41e2-a773-f681a3a27bb7,Kent Grand RO+UV Water Purifier with Mineral ROTM (8L) (Edition 2),Home & Kitchen,19088.72,11257.45,14193.2,137,0.99,2024-05-14
+1fab9d22-be46-4276-9a14-856908057d36,Solimo Queen Size 100% Cotton Floral Bedsheet with 2 Pillows (Edition 2),Home & Kitchen,1672.62,557.54,835.38,305,0.9,2026-07-18
+acfbec42-da58-45ed-bff4-a08a169ad6fa,Philips Daily Collection 1.5L Electric Kettle (HD9306) (Edition 2),Home & Kitchen,2645.56,1079.82,1667.83,497,0.1,2023-01-29
+959e9ab6-6e4f-4115-a055-8e96952a5fba,Bajaj New Shakti 15L Storage Water Heater (Geyser) (Edition 2),Home & Kitchen,9829.07,4741.66,5926.09,435,0.8,2025-01-07
+451f4282-2beb-423c-874f-d989b4941ecc,Hawkins Contura 3L Hard Anodised Pressure Cooker (Edition 2),Home & Kitchen,2062.9,1199.36,1678.14,120,0.4,2024-01-12
+4d2b6e08-4062-4567-8c1b-e393cd03fe5f,Cello Opalware Dazzle Tropical Lagoon Dinner Set (18 Pcs) (Edition 2),Home & Kitchen,2486.11,946.61,1394.01,140,0.68,2022-06-02
+1b0ab462-77ba-4aaf-b12a-487f74eb0691,Story@Home Blackout 7ft Eyelet Door Curtains (Set of 2) (Edition 2),Home & Kitchen,2133.8,640.46,959.62,159,0.6,2025-08-27
+f2a704b3-436c-4773-8f46-4c1dc6090192,Indian Polity by M. Laxmikanth (7th Edition) (Edition 2),Books & Media,972.94,440.02,634.61,166,0.3,2025-02-27
+494ca8cd-124b-46b3-9094-c9bb3f2acfee,Atomic Habits by James Clear (Paperback) (Edition 2),Books & Media,825.41,289.25,463.84,127,0.12,2023-02-07
+50c2567e-4006-484a-a113-30676c47e9c8,UPSC General Studies Paper 1 Manual by McGraw Hill (Edition 2),Books & Media,1340.56,600.94,923.6,279,0.75,2021-12-22
+6937cafc-9963-4735-bc91-b7d0d7dfe78c,Rich Dad Poor Dad (English / Hindi Edition) (Edition 2),Books & Media,512.23,184.77,306.93,300,0.26,2024-06-02
+f8c22b17-bc73-4a35-abf7-7cf1728b801c,NCERT Complete Class 10 & 12 Science/Maths Set (Edition 2),Books & Media,1745.77,754.93,1225.82,455,0.14,2024-01-25
+b3f9a8fb-b637-4c04-ae87-1b34f941543b,Word Power Made Easy by Norman Lewis (Edition 2),Books & Media,304.04,91.52,171.85,207,0.71,2025-12-17
+9f306c3e-12a4-4590-9737-489d129bd6af,Ikigai: The Japanese Secret to a Long and Happy Life (Edition 2),Books & Media,589.1,203.51,342.75,247,0.29,2026-06-12
+6da3e7dd-3c41-4f6d-b530-1a53b2001dd5,Quantitative Aptitude for Competitive Exams by R.S. Aggarwal (Edition 2),Books & Media,825.63,368.0,547.28,65,0.09,2023-06-16
+b0da0d89-bef2-40d7-8b33-98394317dcaf,The Psychology of Money by Morgan Housel (Edition 2),Books & Media,478.83,172.73,277.32,204,0.55,2025-08-09
+4fb56175-22a0-46fb-ab53-69c95841afe6,Mamaearth Vitamin C Face Wash with Turmeric (150ml) (Edition 2),Health & Beauty,404.0,141.75,282.5,288,0.45,2026-03-07
+6f253484-7238-45f3-b14b-c027095242aa,Himalaya Purifying Neem Face Wash (400ml) (Edition 2),Health & Beauty,436.06,184.68,306.78,300,0.27,2026-01-10
+16474579-362e-4d95-a2de-577a8b6e0674,Biotique Bio Kelp Protein Anti-Hair Fall Shampoo (650ml) (Edition 2),Health & Beauty,558.04,198.62,349.01,233,0.35,2022-12-30
+2e648ebb-28c7-4e60-ac3b-2fdad5fd63b1,The Derma Co 10% Niacinamide Serum with Zinc (30ml) (Edition 2),Health & Beauty,562.27,225.28,421.47,123,0.33,2024-09-07
+815341bb-ad12-4286-b1f3-96a61032adde,Wow Skin Science Red Onion Black Seed Hair Oil (200ml) (Edition 2),Health & Beauty,559.93,177.61,326.23,112,0.78,2025-05-24
+5069592c-d13a-4031-b084-72f140033894,Minimalist 10% Vitamin C Serum for Glowing Skin (30ml) (Edition 2),Health & Beauty,722.67,320.5,567.59,185,0.51,2022-03-12
+5589ef6e-5809-4caa-8e1e-5dd09a617092,Nivea Soft Light Moisturizer Cream (300ml) (Edition 2),Health & Beauty,539.82,225.74,377.88,495,0.02,2026-06-23
+85ec85da-c65e-40b9-a297-d3f8a62f2280,Dettol Original Liquid Handwash Refill Pouch (1500ml) (Edition 2),Health & Beauty,360.51,165.28,257.21,455,0.61,2021-11-08
+b11c4935-24b7-4d43-a4ed-8bcfff4c7f05,OnePlus Nord CE4 5G Smartphone (128GB) (Edition 3),Electronics,26895.51,20979.33,24743.78,324,0.23,2021-10-05
+ce95e9fe-353b-4017-948a-2234e7504113,boAt Rockerz 450 Bluetooth Wireless Headphones (Edition 3),Electronics,2789.24,886.21,1398.35,133,0.07,2024-03-13
+64bca82b-c116-44b1-9fd5-55e72c2a72bd,Samsung 43-inch Crystal 4K UHD Smart TV (Edition 3),Electronics,42613.02,27705.39,31957.1,178,0.15,2023-07-15
+b19239d6-581c-4754-a1c7-b352bf882ec9,Noise ColorFit Pulse 3 Smartwatch (Bluetooth Calling) (Edition 3),Electronics,5299.74,1166.18,1801.21,181,0.35,2023-02-01
+ee55fd12-d3b2-4eff-a2c4-f6758c750e96,Mi Power Bank 3i 20000mAh Fast Charging (18W) (Edition 3),Electronics,2081.42,1135.84,1702.81,98,0.29,2023-02-18
+ddcd6fa3-0c49-4aa3-9e63-363dd3b5cfa8,HP 15s Intel Core i5 12th Gen Laptop (16GB/512GB SSD) (Edition 3),Electronics,58299.78,43485.18,49405.09,240,0.41,2022-10-08
+420d545d-a880-4058-b68e-00c27f141d3c,Realme Buds Air 5 ANC True Wireless Earbuds (Edition 3),Electronics,5152.44,2267.53,3400.26,138,0.7,2025-11-22
+58b3a365-5448-4866-8518-229ca065c645,SanDisk Ultra 128GB MicroSDXC Memory Card (Edition 3),Electronics,1800.19,650.07,899.09,202,0.32,2025-03-21
+27d4e104-2491-4ce0-87f1-b9511ef3e173,Zebronics 2.1 Channel Bluetooth Soundbar with Subwoofer (Edition 3),Electronics,7036.18,2814.87,4020.24,154,0.85,2024-09-01
+c5778789-2512-4d5c-9ae6-07dc86466c46,Logitech B170 Wireless Optical Mouse (Edition 3),Electronics,950.37,445.98,636.06,407,0.83,2023-08-09
+bc6dac5e-27b0-4cb6-9e5c-2114a74ce574,Fire-Boltt Ninja Call Pro Plus 1.83 Smartwatch (Edition 3),Electronics,8109.17,1012.76,1316.89,201,0.14,2023-03-27
+d2e5772e-a94a-407e-b287-2609aff815b9,Sony WH-CH520 Wireless Bluetooth Headphones (50hr Battery) (Edition 3),Electronics,5176.77,3216.03,4139.34,381,0.13,2025-10-20
+34608b38-f08f-47c8-86ef-70c3b21847bf,"Apple iPhone 15 (128 GB, Black) (Edition 3)",Electronics,83127.48,64504.43,72826.54,142,0.79,2022-07-21
+836c8eae-e067-4e80-91c3-747aac7ef601,Xiaomi Smart Band 8 with AMOLED Display (Edition 3),Electronics,4270.5,1922.2,2668.66,400,0.15,2025-11-23
+db4d38d8-da76-45df-a223-5dd2258e431a,TP-Link Archer C6 AC1200 Dual Band Gigabit Wi-Fi Router (Edition 3),Electronics,3705.81,1694.57,2328.98,75,0.24,2025-02-06
+ba7fbb52-cb29-478d-84fa-192f5304858a,Levi's Men Slim Fit Washed Denim Jeans (Edition 3),Fashion & Apparel,3280.26,1312.48,2061.53,456,0.71,2026-01-02
+ee198820-2c68-43c6-b1f1-8ed3970544ae,BIBA Women Printed A-Line Cotton Kurti (Edition 3),Fashion & Apparel,2528.03,758.71,1314.09,325,0.77,2022-10-25
+b5fabbc8-411a-4092-bc53-de893c8a59b6,Puma Men Smashic Casual White Sneakers (Edition 3),Fashion & Apparel,4713.18,1676.17,2356.06,401,0.57,2024-10-31
+961ae9c4-7d16-4d1e-ad22-310378d75899,FabIndia Men Handloom Cotton Kurta (Edition 3),Fashion & Apparel,2309.56,840.22,1574.36,427,0.55,2024-02-06
+cf3e9c8a-d3cc-47e2-99d5-1a1b0e7f88ff,Roadster Men Graphic Printed Pure Cotton T-Shirt (Edition 3),Fashion & Apparel,962.08,269.65,480.56,171,0.4,2021-10-11
+8a0d3b57-999b-41fe-9e5d-fabdac6f7813,Allen Solly Men Regular Fit Formal Cotton Shirt (Edition 3),Fashion & Apparel,2096.8,810.5,1333.98,136,0.2,2023-11-23
+c2e91902-1d48-433c-9106-8b1290f2f0d9,W for Woman Solid Rayon Straight Palazzos (Edition 3),Fashion & Apparel,1766.5,519.86,934.71,256,0.86,2023-11-25
+65bcbec2-d2c5-41df-8bdc-557d5b499702,Fastrack Casual Daypack Backpack (28 Litres) (Edition 3),Fashion & Apparel,2058.52,670.7,1030.81,463,0.57,2026-05-29
+9e3d628e-8cb7-4b84-b230-63b5fad0d309,Aurelia Women Embroidered Chanderi Silk Dupatta (Edition 3),Fashion & Apparel,1380.62,386.83,689.85,196,0.19,2026-06-08
+76ca7c89-ae90-4b47-8f92-fe486f82a327,Red Tape Men Memory Foam Running Shoes (Edition 3),Fashion & Apparel,5207.24,1136.33,1561.51,378,0.54,2025-11-10
+38bdd613-ff74-437a-8169-13489851aa0f,Janasya Women Poly Silk Kurta with Pant Set (Edition 3),Fashion & Apparel,3194.76,898.81,1397.15,259,0.74,2024-01-24
+4d16bc07-58c8-4b9b-b94a-6e4cfbee5960,Peter England Men Classic Fit Chinos Trousers (Edition 3),Fashion & Apparel,1870.06,701.62,1121.66,92,0.25,2026-04-21
+53daa991-886f-4f39-847a-2ece359a5ab3,Manyavar Men Jacquard Silk Festive Kurta Pajama Set (Edition 3),Fashion & Apparel,5217.95,1983.22,3652.25,487,0.33,2025-02-22
+1e4fb7ac-a762-4850-9cde-504daea0fbed,Prestige Iris 750W Mixer Grinder (3 Stainless Steel Jars) (Edition 3),Home & Kitchen,4435.91,2072.39,2860.89,449,0.59,2021-10-18
+05df87d2-9c89-4de2-b1f3-e94731d78e52,Milton Thermosteel Duo 1000ml Insulated Water Bottle (Edition 3),Home & Kitchen,1179.1,542.68,837.7,348,0.09,2022-10-23
+143f2090-d601-4e5c-b53e-d2197c595e6b,Pigeon Non-Stick 3-Piece Kitchen Cookware Set (Edition 3),Home & Kitchen,2313.89,821.21,1158.4,404,0.18,2022-01-04
+888fbbb9-0785-4328-924b-acc7a976b381,Kent Grand RO+UV Water Purifier with Mineral ROTM (8L) (Edition 3),Home & Kitchen,19284.56,11372.95,14338.81,251,0.46,2023-12-21
+0c71baed-8f89-4d68-b31b-0c57cf796e2c,Solimo Queen Size 100% Cotton Floral Bedsheet with 2 Pillows (Edition 3),Home & Kitchen,1706.8,568.93,852.45,496,0.55,2026-08-21
+8161ba46-065c-4f4c-997c-ab86f0e2f29e,Philips Daily Collection 1.5L Electric Kettle (HD9306) (Edition 3),Home & Kitchen,2559.78,1044.81,1613.75,58,0.5,2026-08-19
+a7abd203-f53d-4fef-a1c4-509f69a45a54,Bajaj New Shakti 15L Storage Water Heater (Geyser) (Edition 3),Home & Kitchen,9367.86,4519.17,5648.02,498,0.86,2021-10-14
+1c30a720-451c-458e-bee4-489d7051cf73,Hawkins Contura 3L Hard Anodised Pressure Cooker (Edition 3),Home & Kitchen,2145.35,1247.29,1745.21,100,0.26,2026-01-21
+64e13bf5-5820-4d3b-893d-434bfca80448,Cello Opalware Dazzle Tropical Lagoon Dinner Set (18 Pcs) (Edition 3),Home & Kitchen,2496.04,950.4,1399.59,241,0.32,2024-04-19
+a1d47f25-10e9-425d-965b-cff1f0a47e85,Story@Home Blackout 7ft Eyelet Door Curtains (Set of 2) (Edition 3),Home & Kitchen,1874.34,562.58,842.94,470,0.03,2022-04-03
+ae657743-6805-4c6f-9d3b-75bfd4b71548,Indian Polity by M. Laxmikanth (7th Edition) (Edition 3),Books & Media,1005.68,454.83,655.97,170,0.64,2021-11-19
+6dbb2601-7013-496a-b43b-15cd5e25f08b,Atomic Habits by James Clear (Paperback) (Edition 3),Books & Media,762.26,267.12,428.35,69,0.01,2024-03-10
+56b68688-7060-4263-80fe-4d08b24eb5a4,UPSC General Studies Paper 1 Manual by McGraw Hill (Edition 3),Books & Media,1380.62,618.9,951.2,178,0.78,2022-08-13
+7ce81158-5cca-4cc9-a9d4-9b4608987b74,Rich Dad Poor Dad (English / Hindi Edition) (Edition 3),Books & Media,518.95,187.2,310.96,134,0.79,2022-09-07
+452ae8cd-66e3-458d-8add-b2a2a85fd251,NCERT Complete Class 10 & 12 Science/Maths Set (Edition 3),Books & Media,1941.52,839.57,1363.26,238,0.48,2022-12-25
+8d550cce-b51d-4031-afbd-d2fb4583d117,Word Power Made Easy by Norman Lewis (Edition 3),Books & Media,284.26,85.56,160.67,66,0.35,2023-08-03
+eacc5804-f7b2-451c-8dd5-0a1d91a3d8c4,Ikigai: The Japanese Secret to a Long and Happy Life (Edition 3),Books & Media,592.5,204.68,344.73,266,0.02,2024-02-25
+c0dabf41-c755-4d7a-9259-2a7dba5ecd45,Quantitative Aptitude for Competitive Exams by R.S. Aggarwal (Edition 3),Books & Media,927.03,413.19,614.49,80,0.73,2025-08-27
+c4df47a4-ee1d-4940-bfab-e9cca04a902b,The Psychology of Money by Morgan Housel (Edition 3),Books & Media,494.27,178.29,286.26,427,0.47,2026-05-26
+d27fd6cb-193a-4857-ab8a-0a5c5d944e4a,Mamaearth Vitamin C Face Wash with Turmeric (150ml) (Edition 3),Health & Beauty,425.36,149.25,297.44,385,0.21,2024-09-29
+5f03889a-7d5c-4f17-ae3d-4dd8b2cbf885,Himalaya Purifying Neem Face Wash (400ml) (Edition 3),Health & Beauty,398.43,168.74,280.3,192,0.61,2023-08-15
+afa4434e-d6c3-48ad-aa7c-29b3973a5ed4,Biotique Bio Kelp Protein Anti-Hair Fall Shampoo (650ml) (Edition 3),Health & Beauty,602.88,214.58,377.06,188,0.46,2023-05-31
+65ff1688-5555-42b8-9bba-e9a844abd23b,The Derma Co 10% Niacinamide Serum with Zinc (30ml) (Edition 3),Health & Beauty,558.73,223.86,418.81,477,0.1,2026-02-22
+bc942593-3c21-4565-b934-42a55afc8482,Wow Skin Science Red Onion Black Seed Hair Oil (200ml) (Edition 3),Health & Beauty,559.29,177.41,325.87,113,0.16,2026-04-20
+cefec4f3-b21b-48db-a7ac-1116319e0123,Minimalist 10% Vitamin C Serum for Glowing Skin (30ml) (Edition 3),Health & Beauty,657.02,291.38,516.03,54,0.99,2025-07-08
+afa7b6f8-8304-40a7-829f-2c63d36bf971,Nivea Soft Light Moisturizer Cream (300ml) (Edition 3),Health & Beauty,511.66,213.96,358.16,165,0.92,2024-04-20
+52912f95-93b1-4b65-9497-ff495e9f9842,Dettol Original Liquid Handwash Refill Pouch (1500ml) (Edition 3),Health & Beauty,322.74,147.96,230.26,211,0.66,2025-11-10
+53a32163-a3b5-42ee-b269-7b574650ca63,OnePlus Nord CE4 5G Smartphone (128GB) (Edition 4),Electronics,23938.16,18672.51,22023.03,275,0.92,2023-09-29
+aeec4ca5-8c21-4f12-a213-231b6f054ee1,boAt Rockerz 450 Bluetooth Wireless Headphones (Edition 4),Electronics,2982.92,947.75,1495.45,473,0.97,2025-10-03
+03cf4841-9a16-4d21-9806-79dbcf08120d,Samsung 43-inch Crystal 4K UHD Smart TV (Edition 4),Electronics,41657.0,27083.82,31240.14,408,0.69,2026-07-29
+1bab7462-813a-4d6f-a7b1-1cb83f3451bc,Noise ColorFit Pulse 3 Smartwatch (Bluetooth Calling) (Edition 4),Electronics,4606.68,1013.67,1565.66,214,0.02,2021-10-21
+f377cee9-332b-42f4-89df-a9cae939b2d8,Mi Power Bank 3i 20000mAh Fast Charging (18W) (Edition 4),Electronics,2116.7,1155.09,1731.67,474,0.03,2022-06-03
+00a3c711-023c-4d85-89d2-ce2d469107a2,HP 15s Intel Core i5 12th Gen Laptop (16GB/512GB SSD) (Edition 4),Electronics,63286.49,47204.7,53630.98,58,0.93,2022-02-28
+d4d884eb-6e51-495b-84d9-399773161381,Realme Buds Air 5 ANC True Wireless Earbuds (Edition 4),Electronics,5131.23,2258.19,3386.26,428,0.06,2022-07-20
+551b9d7c-ea56-4a40-bc89-c3394a67a78f,SanDisk Ultra 128GB MicroSDXC Memory Card (Edition 4),Electronics,1883.29,680.08,940.6,92,0.51,2021-09-28
+ef447761-b274-4808-b18e-cdc8396e706a,Zebronics 2.1 Channel Bluetooth Soundbar with Subwoofer (Edition 4),Electronics,6485.96,2594.75,3705.86,59,0.36,2025-01-07
+bad11052-94e4-48ff-acfc-808b76034287,Logitech B170 Wireless Optical Mouse (Edition 4),Electronics,853.62,400.58,571.31,139,0.36,2024-09-11
+702d88d2-449c-4ed9-ab9d-25d61ce2fff8,Fire-Boltt Ninja Call Pro Plus 1.83 Smartwatch (Edition 4),Electronics,8372.44,1045.64,1359.64,274,0.94,2025-06-24
+c60db95a-c956-4bdc-9493-ef13dd75bf02,Sony WH-CH520 Wireless Bluetooth Headphones (50hr Battery) (Edition 4),Electronics,4890.73,3038.33,3910.63,372,0.91,2024-08-06
+b21da6bf-b117-4c65-a996-3394f6571376,"Apple iPhone 15 (128 GB, Black) (Edition 4)",Electronics,80156.63,62199.14,70223.83,150,0.88,2026-01-20
+8390be89-abde-48de-afba-2c444fd5eedf,Xiaomi Smart Band 8 with AMOLED Display (Edition 4),Electronics,4294.64,1933.07,2683.75,402,0.84,2022-10-09
+0e8c377e-fa51-461e-bf56-8470365126a6,TP-Link Archer C6 AC1200 Dual Band Gigabit Wi-Fi Router (Edition 4),Electronics,3367.91,1540.05,2116.61,193,0.88,2021-09-07
+2e089f17-9aec-4293-9b10-857f5c991dd1,Levi's Men Slim Fit Washed Denim Jeans (Edition 4),Fashion & Apparel,3491.12,1396.85,2194.05,416,0.62,2022-10-24
+0cabb4c1-6a1f-4843-a652-309c92c04122,BIBA Women Printed A-Line Cotton Kurti (Edition 4),Fashion & Apparel,2601.72,780.83,1352.4,267,0.33,2024-11-01
+21e21426-9444-4ae5-adc7-a91138fcdcf7,Puma Men Smashic Casual White Sneakers (Edition 4),Fashion & Apparel,4574.13,1626.72,2286.56,249,0.13,2025-11-26
+443f9d62-de42-418f-a8ed-a27d8ac7b1d6,FabIndia Men Handloom Cotton Kurta (Edition 4),Fashion & Apparel,2141.49,779.08,1459.8,200,0.09,2023-07-11
+6ab8bf38-5787-40c6-bdfe-75fd88e7ba1c,Roadster Men Graphic Printed Pure Cotton T-Shirt (Edition 4),Fashion & Apparel,1028.07,288.15,513.52,255,0.36,2024-11-19
+9c27fcbb-7914-4bd6-8604-df1aeaf7e145,Allen Solly Men Regular Fit Formal Cotton Shirt (Edition 4),Fashion & Apparel,2143.79,828.66,1363.87,363,0.37,2025-01-08
+09af1a2c-c18c-46ba-aee6-6fa64f91da88,W for Woman Solid Rayon Straight Palazzos (Edition 4),Fashion & Apparel,1648.77,485.22,872.42,485,0.12,2026-03-13
+0d212128-5f53-4250-9f9e-804beab0abd9,Fastrack Casual Daypack Backpack (28 Litres) (Edition 4),Fashion & Apparel,1911.88,622.92,957.38,62,0.29,2022-05-31
+b5fc15fb-f9b4-474b-8de2-4a402895a416,Aurelia Women Embroidered Chanderi Silk Dupatta (Edition 4),Fashion & Apparel,1465.71,410.67,732.37,487,0.84,2024-07-20
+41c837ee-dfdb-4f7c-8658-c35524333e7b,Red Tape Men Memory Foam Running Shoes (Edition 4),Fashion & Apparel,5409.67,1180.51,1622.21,435,0.57,2026-01-29
+a8ce094b-ae10-4bf1-941d-c1950cc18831,Janasya Women Poly Silk Kurta with Pant Set (Edition 4),Fashion & Apparel,3255.72,915.96,1423.8,210,0.82,2025-03-30
+e618e7ca-1edb-4b79-beb2-f3b2e5dbce20,Peter England Men Classic Fit Chinos Trousers (Edition 4),Fashion & Apparel,2151.02,807.04,1290.18,320,0.88,2026-03-30
+f819de33-fdff-41b2-a089-7dfac49fb08b,Manyavar Men Jacquard Silk Festive Kurta Pajama Set (Edition 4),Fashion & Apparel,5297.4,2013.42,3707.86,359,0.6,2025-06-05
+e01eb390-f896-43e5-8e0e-2827a454c009,Prestige Iris 750W Mixer Grinder (3 Stainless Steel Jars) (Edition 4),Home & Kitchen,4715.27,2202.91,3041.06,495,0.1,2025-12-10
+346b47e3-ce43-480a-8685-032a9561b79c,Milton Thermosteel Duo 1000ml Insulated Water Bottle (Edition 4),Home & Kitchen,1099.99,506.27,781.5,439,0.68,2026-04-03
+440abbcf-2a0d-483c-983f-bb87f59da32a,Pigeon Non-Stick 3-Piece Kitchen Cookware Set (Edition 4),Home & Kitchen,2536.99,900.39,1270.08,385,0.74,2022-05-12
+df82f312-f369-426b-8771-077d5d812c42,Kent Grand RO+UV Water Purifier with Mineral ROTM (8L) (Edition 4),Home & Kitchen,19193.64,11319.33,14271.21,412,0.33,2024-06-05
+18065305-da9d-4c04-b446-a3b1434f02d8,Solimo Queen Size 100% Cotton Floral Bedsheet with 2 Pillows (Edition 4),Home & Kitchen,1896.6,632.2,947.25,150,0.05,2025-07-27
+68632aee-dd49-4a76-acf5-4c533eb7f9ac,Philips Daily Collection 1.5L Electric Kettle (HD9306) (Edition 4),Home & Kitchen,2878.28,1174.81,1814.54,151,0.25,2022-11-23
+c0186617-6380-4978-a1fe-a9bb835584bb,Bajaj New Shakti 15L Storage Water Heater (Geyser) (Edition 4),Home & Kitchen,9194.88,4435.72,5543.73,191,0.63,2022-09-27
+f12e49f0-8d48-47c0-a828-3953afb52f59,Hawkins Contura 3L Hard Anodised Pressure Cooker (Edition 4),Home & Kitchen,2020.28,1174.58,1643.47,179,0.32,2024-06-26
+ebd2b50e-b7d0-42ff-ba88-0df575963d1e,Cello Opalware Dazzle Tropical Lagoon Dinner Set (18 Pcs) (Edition 4),Home & Kitchen,2507.23,954.66,1405.86,340,0.6,2022-07-27
+c6be4f50-063c-47f6-8b1f-97de9d7311db,Story@Home Blackout 7ft Eyelet Door Curtains (Set of 2) (Edition 4),Home & Kitchen,2143.27,643.3,963.88,227,0.43,2023-06-07
+50f5ebcc-c423-4765-bf09-417b77c3dc50,Indian Polity by M. Laxmikanth (7th Edition) (Edition 4),Books & Media,1035.03,468.1,675.11,90,0.62,2022-07-07
+9fd2480f-cdce-4333-b7c1-5438ada3ebe1,Atomic Habits by James Clear (Paperback) (Edition 4),Books & Media,766.85,268.73,430.93,334,0.49,2024-11-12
+3541eacb-d2cb-4991-9b45-1acbef4e4479,UPSC General Studies Paper 1 Manual by McGraw Hill (Edition 4),Books & Media,1438.84,645.0,991.31,391,0.96,2022-04-26
+3db4228a-0c41-450b-90be-7957312ae6bf,Rich Dad Poor Dad (English / Hindi Edition) (Edition 4),Books & Media,513.87,185.36,307.91,188,0.73,2023-11-12
+76056350-0b99-4fd1-b831-68946075f5ea,NCERT Complete Class 10 & 12 Science/Maths Set (Edition 4),Books & Media,1959.48,847.34,1375.87,326,0.36,2022-05-01
+8db7918a-516c-404a-b5b0-6817a4c2a1f7,Word Power Made Easy by Norman Lewis (Edition 4),Books & Media,299.71,90.21,169.4,433,0.9,2025-12-12
+19f38ffe-4565-4fe9-9d96-72f3cf0b9ad0,Ikigai: The Japanese Secret to a Long and Happy Life (Edition 4),Books & Media,564.1,194.87,328.2,494,0.03,2024-10-06
+745fdb21-1c47-4994-90d0-677e133060a7,Quantitative Aptitude for Competitive Exams by R.S. Aggarwal (Edition 4),Books & Media,805.44,359.0,533.89,462,0.27,2025-04-17
+8049d828-e9dd-49d0-8548-f988d0b04acf,The Psychology of Money by Morgan Housel (Edition 4),Books & Media,510.02,183.98,295.38,73,0.64,2026-05-10
+fb0282ab-6277-40a1-8a7f-ffa8fba55fa8,Mamaearth Vitamin C Face Wash with Turmeric (150ml) (Edition 4),Health & Beauty,427.21,149.9,298.73,222,0.49,2024-02-21
+93104698-cbf4-45da-b103-48ef94c5d3dc,Himalaya Purifying Neem Face Wash (400ml) (Edition 4),Health & Beauty,412.91,174.88,290.49,168,0.82,2026-01-25
+64c9a09f-4a68-4fe1-b4b7-5693717ef0c9,Biotique Bio Kelp Protein Anti-Hair Fall Shampoo (650ml) (Edition 4),Health & Beauty,602.63,214.49,376.9,401,0.94,2026-08-31
+60ed2cfa-395f-4afa-9e43-b2f1e0965abd,The Derma Co 10% Niacinamide Serum with Zinc (30ml) (Edition 4),Health & Beauty,634.79,254.34,475.83,76,0.38,2022-03-23
+53d3606e-c05d-49ed-a4b3-b6a6b23b7626,Wow Skin Science Red Onion Black Seed Hair Oil (200ml) (Edition 4),Health & Beauty,644.01,204.28,375.22,493,0.52,2022-01-04
+9b7dccb9-7696-4366-918a-57622a3c5dd7,Minimalist 10% Vitamin C Serum for Glowing Skin (30ml) (Edition 4),Health & Beauty,725.37,321.7,569.71,340,0.49,2022-06-26
+a0a96d63-2e45-4313-a43c-d9a7c2b647a5,Nivea Soft Light Moisturizer Cream (300ml) (Edition 4),Health & Beauty,565.66,236.55,395.96,396,0.56,2024-06-15
+6ccc2b50-d350-4826-b3b9-9473a64e5f16,Dettol Original Liquid Handwash Refill Pouch (1500ml) (Edition 4),Health & Beauty,334.12,153.18,238.38,425,0.34,2024-05-19
+7c183243-5272-4587-9156-17408f660442,OnePlus Nord CE4 5G Smartphone (128GB) (Edition 5),Electronics,24937.15,19451.75,22942.1,188,0.91,2023-08-04
+71b098f3-af00-4b5f-a71c-2fd61c801948,boAt Rockerz 450 Bluetooth Wireless Headphones (Edition 5),Electronics,3104.44,986.36,1556.37,201,0.33,2023-11-02
+24447b70-f64e-4c1d-9cc1-8be96d54f3a0,Samsung 43-inch Crystal 4K UHD Smart TV (Edition 5),Electronics,41870.88,27222.88,31400.54,420,0.92,2024-11-21
+5b8c4731-b9f9-4565-85fe-c7d5692bb531,Noise ColorFit Pulse 3 Smartwatch (Bluetooth Calling) (Edition 5),Electronics,4877.69,1073.31,1657.77,495,0.12,2023-02-25
+6739bb22-0aa1-40f5-a744-022d1ef1e60e,Mi Power Bank 3i 20000mAh Fast Charging (18W) (Edition 5),Electronics,2353.49,1284.3,1925.39,198,0.15,2025-06-29
+fad4b622-b1c4-43e0-b37f-df306fe138f4,HP 15s Intel Core i5 12th Gen Laptop (16GB/512GB SSD) (Edition 5),Electronics,63156.84,47108.0,53521.11,130,0.76,2023-11-04
+bf2a8eba-cc36-40e9-a5c2-c79ea7231c0c,Realme Buds Air 5 ANC True Wireless Earbuds (Edition 5),Electronics,4979.9,2191.59,3286.4,192,0.17,2022-03-18
+cd972929-fe99-4834-86c9-d93640b31d32,SanDisk Ultra 128GB MicroSDXC Memory Card (Edition 5),Electronics,1845.6,666.47,921.78,103,0.21,2026-04-07
+1e8b9979-cb23-49ab-87f8-30e6a8a64cf1,Zebronics 2.1 Channel Bluetooth Soundbar with Subwoofer (Edition 5),Electronics,7222.41,2889.38,4126.65,92,0.97,2025-05-01
+2839a9df-511c-41e5-87cb-459448e7c318,Logitech B170 Wireless Optical Mouse (Edition 5),Electronics,837.79,393.15,560.71,320,0.0,2025-05-17
+e2d70a84-6fda-4890-a988-3c37f974870e,Fire-Boltt Ninja Call Pro Plus 1.83 Smartwatch (Edition 5),Electronics,7851.64,980.6,1275.07,377,0.94,2024-07-02
+b3d56793-0260-4fcd-b034-7569d40d9662,Sony WH-CH520 Wireless Bluetooth Headphones (50hr Battery) (Edition 5),Electronics,5075.57,3153.16,4058.42,202,0.44,2023-03-13
+b0b584d8-7bc6-4785-8cbe-0d5a3264b6c8,"Apple iPhone 15 (128 GB, Black) (Edition 5)",Electronics,82609.47,64102.46,72372.72,308,0.95,2026-04-29
+7c31c7ba-3814-4fb8-927b-8d0b3d69da7d,Xiaomi Smart Band 8 with AMOLED Display (Edition 5),Electronics,4235.65,1906.52,2646.88,429,0.69,2022-09-16
+ae86c02f-9cd3-48b9-b148-6b0c503b8ca8,TP-Link Archer C6 AC1200 Dual Band Gigabit Wi-Fi Router (Edition 5),Electronics,3709.63,1696.32,2331.37,244,0.32,2025-03-05
+c4cac175-2e4f-4288-b595-60fbf40c8564,Levi's Men Slim Fit Washed Denim Jeans (Edition 5),Fashion & Apparel,3658.48,1463.81,2299.23,351,0.61,2026-03-25
+447d234a-3aa6-422d-9443-e66bff138449,BIBA Women Printed A-Line Cotton Kurti (Edition 5),Fashion & Apparel,2585.63,776.0,1344.03,498,0.94,2024-10-28
+e7a814e7-4a9b-427d-944a-f6d41373b957,Puma Men Smashic Casual White Sneakers (Edition 5),Fashion & Apparel,4161.93,1480.13,2080.5,499,0.03,2024-08-14
+36bbe2bc-b79f-4fbd-9906-4b45245e0183,FabIndia Men Handloom Cotton Kurta (Edition 5),Fashion & Apparel,2198.27,799.73,1498.5,81,0.33,2023-06-22
+90a9f79b-f0a0-4aee-8c08-e0a51d3f182a,Roadster Men Graphic Printed Pure Cotton T-Shirt (Edition 5),Fashion & Apparel,933.0,261.5,466.03,72,0.23,2026-08-31
+456fda85-334a-42f7-ba9a-f17c6d6c89a5,Allen Solly Men Regular Fit Formal Cotton Shirt (Edition 5),Fashion & Apparel,2315.94,895.2,1473.39,195,0.03,2021-09-22
+289fdadf-41b3-437c-a3ff-2f8c61037a5f,W for Woman Solid Rayon Straight Palazzos (Edition 5),Fashion & Apparel,1833.92,539.7,970.39,264,0.97,2024-03-08
+5bf77475-fb98-44a8-aa59-51b0240c9bdf,Fastrack Casual Daypack Backpack (28 Litres) (Edition 5),Fashion & Apparel,2150.52,700.67,1076.88,142,0.85,2026-01-29
+f7190ead-2cee-4678-8787-3a49b3a8cce4,Aurelia Women Embroidered Chanderi Silk Dupatta (Edition 5),Fashion & Apparel,1491.04,417.77,745.02,69,0.27,2025-07-22
+d40baefd-76f4-49d8-8667-02e251c37a79,Red Tape Men Memory Foam Running Shoes (Edition 5),Fashion & Apparel,5847.78,1276.11,1753.59,68,0.32,2024-09-26
+33dfbf71-5b00-4493-91b7-f0bc444c23af,Janasya Women Poly Silk Kurta with Pant Set (Edition 5),Fashion & Apparel,3431.91,965.53,1500.86,90,0.5,2023-11-15
+3ad26d5e-8df9-4c12-96fe-2b3962f6ce79,Peter England Men Classic Fit Chinos Trousers (Edition 5),Fashion & Apparel,1993.3,747.86,1195.58,135,0.11,2022-09-26
+9de9be78-99b2-4365-b4a3-4aaadbaabc3a,Manyavar Men Jacquard Silk Festive Kurta Pajama Set (Edition 5),Fashion & Apparel,5031.53,1912.36,3521.77,148,0.32,2023-08-01
+8257129d-cb94-4214-8b35-0efb069fdbd8,Prestige Iris 750W Mixer Grinder (3 Stainless Steel Jars) (Edition 5),Home & Kitchen,4310.42,2013.77,2779.96,248,0.43,2024-07-11
+b5998be6-877b-4a3a-bcb3-6c44dbb28de1,Milton Thermosteel Duo 1000ml Insulated Water Bottle (Edition 5),Home & Kitchen,1131.99,521.0,804.23,187,0.98,2023-12-21
+9787f620-17a4-46f6-8636-627386c41400,Pigeon Non-Stick 3-Piece Kitchen Cookware Set (Edition 5),Home & Kitchen,2565.22,910.41,1284.22,404,0.22,2024-01-01
+288c8665-6990-428c-abe4-e725779d35c9,Kent Grand RO+UV Water Purifier with Mineral ROTM (8L) (Edition 5),Home & Kitchen,20123.72,11867.83,14962.76,170,0.12,2025-04-08
+0facd474-b988-405c-8ef5-dafe0506268d,Solimo Queen Size 100% Cotton Floral Bedsheet with 2 Pillows (Edition 5),Home & Kitchen,1686.38,562.13,842.25,53,0.15,2023-11-11
+fcf79acf-c860-4d95-8e91-92135d77a206,Philips Daily Collection 1.5L Electric Kettle (HD9306) (Edition 5),Home & Kitchen,2907.74,1186.83,1833.12,81,0.5,2023-08-29
+eec6c7ff-9795-48c1-94b3-f0a3224a1968,Bajaj New Shakti 15L Storage Water Heater (Geyser) (Edition 5),Home & Kitchen,9200.52,4438.44,5547.13,458,0.42,2023-03-10
+16dc8cda-f2c9-420c-940d-0554da281275,Hawkins Contura 3L Hard Anodised Pressure Cooker (Edition 5),Home & Kitchen,2297.58,1335.8,1869.05,496,0.18,2026-08-30
+d857c8df-976f-45c3-9daf-4f5c7942eda9,Cello Opalware Dazzle Tropical Lagoon Dinner Set (18 Pcs) (Edition 5),Home & Kitchen,2425.74,923.63,1360.16,66,0.15,2025-08-04
+d5fab55a-32c3-4b15-9246-be6bd694bea9,Story@Home Blackout 7ft Eyelet Door Curtains (Set of 2) (Edition 5),Home & Kitchen,1961.74,588.82,882.24,175,0.76,2025-07-15
+009c768a-4d60-47f5-9d39-9e1aceb14b5a,Indian Polity by M. Laxmikanth (7th Edition) (Edition 5),Books & Media,960.03,434.19,626.19,281,0.34,2021-09-29
+813ae357-26e2-4e97-be05-5780f97b830b,Atomic Habits by James Clear (Paperback) (Edition 5),Books & Media,827.02,289.82,464.75,320,0.24,2023-03-03
+2597b5a3-f2f2-458c-9a78-8be6620767a2,UPSC General Studies Paper 1 Manual by McGraw Hill (Edition 5),Books & Media,1488.5,667.26,1025.52,51,0.15,2025-07-21
+3f85b8c0-67d5-41f5-8025-1da9083fabf8,Rich Dad Poor Dad (English / Hindi Edition) (Edition 5),Books & Media,535.05,193.0,320.6,432,0.17,2022-02-18
+452b4e59-a615-40a8-9234-5c4cc14c2eea,NCERT Complete Class 10 & 12 Science/Maths Set (Edition 5),Books & Media,1900.5,821.84,1334.46,218,0.79,2025-06-26
+9a9e06a5-9d4d-44fa-b28c-9867ebcac910,Word Power Made Easy by Norman Lewis (Edition 5),Books & Media,306.92,92.38,173.47,152,0.76,2024-03-12
+e95b1a83-ee1c-493e-98f6-693643cf3abf,Ikigai: The Japanese Secret to a Long and Happy Life (Edition 5),Books & Media,587.2,202.85,341.64,337,0.57,2022-12-06
+e6b839a9-fa91-4e2a-bd7a-ffeb08348300,Quantitative Aptitude for Competitive Exams by R.S. Aggarwal (Edition 5),Books & Media,893.7,398.33,592.39,362,0.82,2024-11-11
+a4c72e0a-1edc-44de-a8ee-3dfa95cbe986,The Psychology of Money by Morgan Housel (Edition 5),Books & Media,498.36,179.77,288.63,198,0.23,2023-09-30
+8d017aee-5c35-4d7b-b88f-c756cfa8f026,Mamaearth Vitamin C Face Wash with Turmeric (150ml) (Edition 5),Health & Beauty,417.87,146.62,292.19,121,0.81,2023-08-05
+f7cab92a-a42f-4e01-b11c-a87faf8efb35,Himalaya Purifying Neem Face Wash (400ml) (Edition 5),Health & Beauty,413.63,175.18,291.0,182,0.78,2026-02-16
+45250c52-374a-44ba-94bf-e7f06fa17e83,Biotique Bio Kelp Protein Anti-Hair Fall Shampoo (650ml) (Edition 5),Health & Beauty,563.93,200.72,352.69,258,0.34,2024-10-07

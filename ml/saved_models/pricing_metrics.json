@@ -1,0 +1,75 @@
+{
+  "r2_score": 0.9825431104559337,
+  "rmse": 2560.630171030527,
+  "mae": 732.9361207584817,
+  "mape": 4.6206228212999765,
+  "fixed_revenue_sim": 3689828.4600000004,
+  "dynamic_revenue_sim": 5262618.523504638,
+  "revenue_uplift_pct": 42.625018494887904,
+  "feature_importances": [
+    {
+      "name": "base_price",
+      "importance": 0.6972072124481201
+    },
+    {
+      "name": "cost_price",
+      "importance": 0.2347876876592636
+    },
+    {
+      "name": "avg_competitor_price",
+      "importance": 0.03568803519010544
+    },
+    {
+      "name": "min_competitor_price",
+      "importance": 0.029191620647907257
+    },
+    {
+      "name": "margin_room",
+      "importance": 0.002064594067633152
+    },
+    {
+      "name": "popularity_score",
+      "importance": 0.0002801125810947269
+    },
+    {
+      "name": "demand_rate",
+      "importance": 0.00016783307364676148
+    },
+    {
+      "name": "stock_quantity",
+      "importance": 0.0001529223081888631
+    },
+    {
+      "name": "competitor_delta_ratio",
+      "importance": 0.0001516539923613891
+    },
+    {
+      "name": "stock_depletion_ratio",
+      "importance": 0.0001327127538388595
+    },
+    {
+      "name": "flash_sale_order_ratio",
+      "importance": 0.0001224819861818105
+    },
+    {
+      "name": "cat_Fashion & Apparel",
+      "importance": 3.227949855499901e-05
+    },
+    {
+      "name": "cat_Home & Kitchen",
+      "importance": 1.1942242053919472e-05
+    },
+    {
+      "name": "cat_Electronics",
+      "importance": 8.93648848432349e-06
+    },
+    {
+      "name": "cat_Books & Media",
+      "importance": 0.0
+    },
+    {
+      "name": "cat_Health & Beauty",
+      "importance": 0.0
+    }
+  ]
+}
