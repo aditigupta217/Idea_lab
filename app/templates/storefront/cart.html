@@ -1,41 +1,41 @@
 {% extends "base.html" %}
 
-{% block title %}Your Shopping Bag | FlashDeals AI{% endblock %}
+{% block title %}Shopping Bag | FlashDeals India{% endblock %}
 
 {% block content %}
 <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
   
   <div class="flex items-center justify-between border-b border-slate-200 pb-4">
-    <h1 class="text-2xl font-bold font-display text-slate-900">Your Shopping Cart</h1>
-    <span class="text-xs text-slate-500 font-medium">{{ cart_items|length }} Unique SKUs</span>
+    <h1 class="text-2xl font-bold font-display text-slate-900">Your Shopping Bag</h1>
+    <span class="text-xs text-slate-500 font-medium">{{ cart_items|length }} Items Selected</span>
   </div>
 
   {% if cart_items|length == 0 %}
-    <div class="p-16 text-center rounded-3xl bg-white border border-slate-200 space-y-4 shadow-sm">
+    <div class="p-16 text-center rounded-2xl bg-white border border-slate-200 space-y-4 shadow-xs">
       <div class="w-16 h-16 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mx-auto">
         <i data-lucide="shopping-bag" class="w-8 h-8"></i>
       </div>
-      <h3 class="text-lg font-bold text-slate-800">Your cart is empty</h3>
-      <p class="text-xs text-slate-500 max-w-sm mx-auto">Discover AI dynamic discounts and grab active flash deals before the countdown expires.</p>
-      <a href="{{ url_for('products.index') }}" class="inline-block py-2.5 px-6 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold shadow-md shadow-brand-500/20 transition-all">
+      <h3 class="text-lg font-bold text-slate-800">Your bag is empty</h3>
+      <p class="text-xs text-slate-500 max-w-sm mx-auto">Explore live flash deals and dynamic discounts before the hourly countdown expires.</p>
+      <a href="{{ url_for('products.index') }}" class="inline-block py-2.5 px-6 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold shadow-xs transition-all">
         Explore Flash Deals
       </a>
     </div>
   {% else %}
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       
-      <!-- Cart Items List -->
-      <div class="lg:col-span-8 bg-white rounded-3xl border border-slate-200/90 shadow-sm divide-y divide-slate-100 overflow-hidden">
+      <!-- Cart Items List (Clean Light Theme) -->
+      <div class="lg:col-span-8 bg-white rounded-2xl border border-slate-200 shadow-xs divide-y divide-slate-100 overflow-hidden">
         {% for item in cart_items %}
           <div class="p-5 flex items-center justify-between gap-4 hover:bg-slate-50/50 transition-colors" id="cart-row-{{ item.product.id }}">
             
             <!-- Graphic Icon & Name -->
             <div class="flex items-center gap-4 min-w-0">
-              <div class="w-14 h-14 rounded-2xl bg-slate-100 flex items-center justify-center text-brand-600 flex-shrink-0">
-                <i data-lucide="package" class="w-7 h-7 stroke-1"></i>
+              <div class="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700 flex-shrink-0 border border-slate-200/60">
+                <i data-lucide="package" class="w-6 h-6 stroke-1"></i>
               </div>
               <div class="min-w-0">
-                <span class="text-[10px] font-bold uppercase text-brand-600">{{ item.product.category }}</span>
+                <span class="text-[10px] font-bold uppercase text-slate-500">{{ item.product.category }}</span>
                 <h4 class="font-bold text-sm text-slate-900 truncate">{{ item.product.name }}</h4>
                 <div class="text-xs font-mono font-bold text-slate-700 mt-0.5">{{ item.product.current_price | currency }}</div>
               </div>
@@ -63,7 +63,7 @@
       </div>
 
       <!-- Order Summary Card -->
-      <div class="lg:col-span-4 bg-white rounded-3xl border border-slate-200/90 shadow-sm p-6 space-y-6">
+      <div class="lg:col-span-4 bg-white rounded-2xl border border-slate-200 shadow-xs p-6 space-y-5">
         <h3 class="text-base font-bold font-display text-slate-900">Order Summary</h3>
 
         <div class="space-y-3 text-xs">
@@ -72,22 +72,22 @@
             <span class="font-mono font-bold text-slate-900">{{ subtotal | currency }}</span>
           </div>
           <div class="flex justify-between text-slate-600">
-            <span>Flash Deal Delivery:</span>
-            <span class="text-emerald-600 font-bold">FREE Express</span>
+            <span>Delivery:</span>
+            <span class="text-emerald-700 font-semibold">FREE Pan-India Express</span>
           </div>
           <div class="flex justify-between text-slate-600">
-            <span>AI Shield Verification:</span>
-            <span class="text-brand-600 font-medium">Included</span>
+            <span>Security Verification:</span>
+            <span class="text-slate-700 font-medium">Included</span>
           </div>
           <div class="pt-3 border-t border-slate-100 flex justify-between text-sm font-bold text-slate-900">
-            <span>Estimated Total:</span>
+            <span>Total Payable:</span>
             <span class="font-mono text-base font-black text-slate-900">{{ subtotal | currency }}</span>
           </div>
         </div>
 
         <a href="{{ url_for('orders.checkout') }}" 
-          class="block w-full py-3.5 px-4 text-center rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-lg shadow-brand-500/25 transition-all">
-          Proceed to Secure Checkout &rarr;
+          class="block w-full py-3.5 px-4 text-center rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-xs transition-all">
+          Proceed to Checkout &rarr;
         </a>
       </div>
 

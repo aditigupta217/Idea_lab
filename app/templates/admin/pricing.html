@@ -1,25 +1,25 @@
 {% extends "admin/layout.html" %}
 
-{% block admin_title %}AI Dynamic Pricing Engine{% endblock %}
-{% block admin_subtitle %}Flash Sale Price Optimization & Margin Protection{% endblock %}
+{% block admin_title %}Dynamic Pricing Engine{% endblock %}
+{% block admin_subtitle %}Flash Sale Price Optimization & Margin Protection Matrix{% endblock %}
 
 {% block admin_content %}
-<!-- Control Bar & Filter Header -->
-<div class="p-5 rounded-2xl bg-dark-900 border border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<!-- Control Bar & Filter Header (Light Blue SaaS Theme) -->
+<div class="p-5 admin-card flex flex-col md:flex-row md:items-center justify-between gap-4">
   
   <!-- Categories Filter -->
   <div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0">
     <a href="{{ url_for('dashboard.pricing') }}" 
-      class="px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all
-      {% if not selected_category %} bg-brand-600 text-white shadow-md shadow-brand-500/20
-      {% else %} bg-slate-800 text-slate-300 hover:bg-slate-700 {% endif %}">
+      class="px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all
+      {% if not selected_category %} bg-sky-800 text-white shadow-xs
+      {% else %} bg-sky-50 text-sky-900 hover:bg-sky-100 border border-sky-200 {% endif %}">
       All SKUs
     </a>
     {% for cat in categories %}
       <a href="{{ url_for('dashboard.pricing', category=cat) }}" 
-        class="px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all
-        {% if selected_category == cat %} bg-brand-600 text-white shadow-md shadow-brand-500/20
-        {% else %} bg-slate-800 text-slate-300 hover:bg-slate-700 {% endif %}">
+        class="px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all
+        {% if selected_category == cat %} bg-sky-800 text-white shadow-xs
+        {% else %} bg-sky-50 text-sky-900 hover:bg-sky-100 border border-sky-200 {% endif %}">
         {{ cat }}
       </a>
     {% endfor %}
@@ -27,33 +27,33 @@
 
   <!-- Safety Rules & Batch Apply -->
   <div class="flex items-center gap-3 flex-shrink-0">
-    <div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-950/60 border border-emerald-800/40 text-emerald-400 text-xs font-medium">
-      <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
-      <span>Cost Floor Safety Enforced</span>
+    <div class="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold">
+      <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+      <span>Cost Floor Safety Guaranteed</span>
     </div>
 
     <button onclick="applyAllPricingModal()" 
-      class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white text-xs font-bold shadow-lg shadow-brand-500/25 transition-all">
-      <i data-lucide="sparkles" class="w-4 h-4"></i>
+      class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sky-700 hover:bg-sky-800 text-white text-xs font-bold shadow-sm transition-all">
+      <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
       <span>Apply All Recommendations</span>
     </button>
   </div>
 </div>
 
-<!-- Recommendations Table -->
-<div class="p-6 rounded-2xl bg-dark-900 border border-slate-800 space-y-4">
+<!-- Recommendations Table (Light Blue SaaS Theme) -->
+<div class="p-6 admin-card space-y-4">
   <div class="flex items-center justify-between">
     <div>
-      <h3 class="text-sm font-bold text-white font-display">Active Dynamic Price Recommendations</h3>
-      <p class="text-xs text-slate-400">Predicted by XGBoost Regressor based on stock velocity, competitor prices & demand</p>
+      <h3 class="text-sm font-bold text-slate-900 font-display">Active Pricing Matrix</h3>
+      <p class="text-xs text-sky-900/70">Predicted optimal prices balancing demand velocity, stock depletion, and competitor pricing</p>
     </div>
-    <span class="text-xs font-mono text-slate-400">{{ recommendations|length }} SKUs Optimized</span>
+    <span class="text-xs font-mono font-bold text-sky-800 bg-sky-50 px-2.5 py-1 rounded-lg border border-sky-200">{{ recommendations|length }} SKUs Analyzed</span>
   </div>
 
   <div class="overflow-x-auto">
     <table class="w-full text-left text-xs">
       <thead>
-        <tr class="border-b border-slate-800 text-slate-400 uppercase text-[10px] tracking-wider font-semibold">
+        <tr class="admin-table-header">
           <th class="py-3 px-3">Product Name</th>
           <th class="py-3 px-3">Stock Level</th>
           <th class="py-3 px-3">Base Price</th>
@@ -66,73 +66,73 @@
           <th class="py-3 px-3 text-right">Actions</th>
         </tr>
       </thead>
-      <tbody class="divide-y divide-slate-800/60 font-medium" id="pricing-table-body">
+      <tbody class="divide-y divide-sky-100 font-medium" id="pricing-table-body">
         {% for rec in recommendations %}
-          <tr class="hover:bg-slate-800/40 transition-colors group" id="row-{{ rec.product_id }}">
+          <tr class="admin-table-row group" id="row-{{ rec.product_id }}">
             
             <!-- Name & Category -->
             <td class="py-3 px-3">
-              <div class="font-bold text-white group-hover:text-brand-300 transition-colors cursor-pointer" onclick="openPriceHistoryModal('{{ rec.product_id }}')">
+              <div class="font-bold text-slate-900 hover:text-brand-600 transition-colors cursor-pointer" onclick="openPriceHistoryModal('{{ rec.product_id }}')">
                 {{ rec.product_name }}
               </div>
-              <div class="text-[10px] text-slate-400">{{ rec.category }}</div>
+              <div class="text-[10px] text-slate-500 font-medium">{{ rec.category }}</div>
             </td>
 
             <!-- Stock Level -->
             <td class="py-3 px-3">
               <div class="flex items-center gap-2">
-                <span class="font-mono text-slate-300">{{ rec.stock }}</span>
-                <div class="w-12 bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                <span class="font-mono text-slate-800 font-semibold">{{ rec.stock }}</span>
+                <div class="w-12 bg-slate-100 h-1.5 rounded-full overflow-hidden border border-slate-200">
                   <div class="h-full rounded-full {% if rec.stock < 50 %}bg-rose-500{% elif rec.stock < 150 %}bg-amber-500{% else %}bg-emerald-500{% endif %}" style="width: {{ (rec.stock / 500) * 100 }}%"></div>
                 </div>
               </div>
             </td>
 
             <!-- Base Price -->
-            <td class="py-3 px-3 font-mono text-slate-400">{{ rec.base_price | currency }}</td>
+            <td class="py-3 px-3 font-mono text-slate-500">{{ rec.base_price | currency }}</td>
 
             <!-- Cost Price -->
-            <td class="py-3 px-3 font-mono text-slate-400">
-              <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 text-[11px]">{{ rec.cost_price | currency }}</span>
+            <td class="py-3 px-3 font-mono">
+              <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-[11px] font-semibold border border-slate-200">{{ rec.cost_price | currency }}</span>
             </td>
 
             <!-- Current Price -->
-            <td class="py-3 px-3 font-mono text-slate-300 font-semibold" id="curr-price-{{ rec.product_id }}">{{ rec.current_price | currency }}</td>
+            <td class="py-3 px-3 font-mono text-slate-900 font-bold" id="curr-price-{{ rec.product_id }}">{{ rec.current_price | currency }}</td>
 
             <!-- AI Recommended -->
             <td class="py-3 px-3">
-              <div class="font-mono font-bold text-emerald-400 text-xs">
+              <div class="font-mono font-bold text-emerald-700 text-xs">
                 {{ rec.recommended_price | currency }}
               </div>
-              <div class="text-[9px] text-slate-400 font-mono">Competitor: {{ rec.competitor_avg | currency }}</div>
+              <div class="text-[10px] text-slate-500 font-mono">Market: {{ rec.competitor_avg | currency }}</div>
             </td>
 
             <!-- Price Diff -->
             <td class="py-3 px-3">
               {% if rec.price_diff < 0 %}
-                <span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-md bg-rose-500/10 text-rose-400 text-[10px] font-bold border border-rose-500/20">
+                <span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-md bg-rose-50 text-rose-700 text-[10px] font-bold border border-rose-200">
                   <i data-lucide="arrow-down-right" class="w-3 h-3"></i>
                   <span>{{ rec.price_diff_pct }}%</span>
                 </span>
               {% elif rec.price_diff > 0 %}
-                <span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-400 text-[10px] font-bold border border-emerald-500/20">
+                <span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-200">
                   <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                   <span>+{{ rec.price_diff_pct }}%</span>
                 </span>
               {% else %}
-                <span class="px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 text-[10px] font-medium">Optimal</span>
+                <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 text-[10px] font-medium border border-slate-200">Optimal</span>
               {% endif %}
             </td>
 
             <!-- Profit Margin -->
             <td class="py-3 px-3">
-              <span class="font-mono font-semibold {% if rec.profit_margin > 40 %}text-emerald-400{% elif rec.profit_margin > 20 %}text-amber-400{% else %}text-rose-400{% endif %}">
+              <span class="font-mono font-bold {% if rec.profit_margin > 40 %}text-emerald-700{% elif rec.profit_margin > 20 %}text-amber-700{% else %}text-rose-700{% endif %}">
                 {{ rec.profit_margin }}%
               </span>
             </td>
 
             <!-- Rationale -->
-            <td class="py-3 px-3 text-slate-400 max-w-xs truncate text-[11px]" title="{{ rec.reason }}">
+            <td class="py-3 px-3 text-slate-600 max-w-xs truncate text-[11px]" title="{{ rec.reason }}">
               {{ rec.reason }}
             </td>
 
@@ -140,11 +140,11 @@
             <td class="py-3 px-3 text-right">
               <div class="flex items-center justify-end gap-1.5">
                 <button onclick="openPriceHistoryModal('{{ rec.product_id }}')" title="View Price Trend Chart" 
-                  class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-all">
+                  class="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all border border-slate-200">
                   <i data-lucide="line-chart" class="w-3.5 h-3.5"></i>
                 </button>
-                <button onclick="applySinglePrice('{{ rec.product_id }}', {{ rec.recommended_price }})" title="Apply AI Price"
-                  class="px-2.5 py-1.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-white text-[11px] font-bold transition-all shadow-sm">
+                <button onclick="applySinglePrice('{{ rec.product_id }}', {{ rec.recommended_price }})" title="Apply Recommended Price"
+                  class="px-2.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-[11px] font-bold transition-all shadow-xs">
                   Apply
                 </button>
               </div>
@@ -156,15 +156,15 @@
   </div>
 </div>
 
-<!-- Price History Chart Modal -->
-<div id="price-history-modal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-  <div class="bg-dark-900 border border-slate-800 rounded-2xl max-w-2xl w-full p-6 shadow-2xl space-y-4">
-    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+<!-- Price History Chart Modal (Clean Light Theme) -->
+<div id="price-history-modal" class="hidden fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4">
+  <div class="bg-white border border-slate-200 rounded-2xl max-w-2xl w-full p-6 shadow-xl space-y-4">
+    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
       <div>
-        <h3 class="font-bold text-base text-white font-display" id="modal-product-name">Product Price History</h3>
-        <p class="text-xs text-slate-400" id="modal-product-category">Category & Historical Price Trajectory</p>
+        <h3 class="font-bold text-base text-slate-900 font-display" id="modal-product-name">Product Price History</h3>
+        <p class="text-xs text-slate-500" id="modal-product-category">Category & Historical Price Trajectory</p>
       </div>
-      <button onclick="closePriceModal()" class="text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <button onclick="closePriceModal()" class="text-slate-400 hover:text-slate-600"><i data-lucide="x" class="w-5 h-5"></i></button>
     </div>
 
     <!-- Product Price Trend Canvas -->
@@ -172,23 +172,23 @@
       <canvas id="productHistoryChart"></canvas>
     </div>
 
-    <div class="grid grid-cols-3 gap-3 p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs">
+    <div class="grid grid-cols-3 gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs">
       <div>
-        <span class="text-slate-400">Base Catalog Price</span>
-        <div class="font-mono font-bold text-white mt-0.5" id="modal-base-price">₹0.00</div>
+        <span class="text-slate-500 font-medium">Base Catalog Price</span>
+        <div class="font-mono font-bold text-slate-900 mt-0.5" id="modal-base-price">₹0.00</div>
       </div>
       <div>
-        <span class="text-slate-400">Cost Floor Boundary</span>
-        <div class="font-mono font-bold text-rose-400 mt-0.5" id="modal-cost-price">₹0.00</div>
+        <span class="text-slate-500 font-medium">Cost Floor Boundary</span>
+        <div class="font-mono font-bold text-rose-700 mt-0.5" id="modal-cost-price">₹0.00</div>
       </div>
       <div>
-        <span class="text-slate-400">Current Flash Price</span>
-        <div class="font-mono font-bold text-emerald-400 mt-0.5" id="modal-current-price">₹0.00</div>
+        <span class="text-slate-500 font-medium">Current Store Price</span>
+        <div class="font-mono font-bold text-emerald-700 mt-0.5" id="modal-current-price">₹0.00</div>
       </div>
     </div>
 
-    <div class="flex justify-end gap-2 pt-2 border-t border-slate-800">
-      <button onclick="closePriceModal()" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200">Close</button>
+    <div class="flex justify-end gap-2 pt-2 border-t border-slate-100">
+      <button onclick="closePriceModal()" class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-semibold text-slate-700">Close</button>
     </div>
   </div>
 </div>
@@ -244,8 +244,8 @@
             {
               label: 'Actual Store Price',
               data: data.prices,
-              borderColor: '#10b981',
-              backgroundColor: 'rgba(16, 185, 129, 0.1)',
+              borderColor: '#0270c7',
+              backgroundColor: 'rgba(2, 112, 199, 0.08)',
               fill: true,
               tension: 0.3,
               pointRadius: 4,
@@ -253,7 +253,7 @@
             {
               label: 'AI Recommended Optimum',
               data: data.ai_recommendations,
-              borderColor: '#818cf8',
+              borderColor: '#047857',
               borderDash: [4, 4],
               tension: 0.3,
               pointRadius: 3,
@@ -265,12 +265,12 @@
           maintainAspectRatio: false,
           plugins: {
             legend: {
-              labels: { color: '#94a3b8', font: { size: 11 } }
+              labels: { color: '#475569', font: { size: 11 } }
             }
           },
           scales: {
-            x: { grid: { color: 'rgba(51, 65, 85, 0.2)' }, ticks: { color: '#94a3b8' } },
-            y: { grid: { color: 'rgba(51, 65, 85, 0.2)' }, ticks: { color: '#94a3b8', callback: v => `₹${v}` } }
+            x: { grid: { color: '#f1f5f9' }, ticks: { color: '#64748b' } },
+            y: { grid: { color: '#f1f5f9' }, ticks: { color: '#64748b', callback: v => `₹${v}` } }
           }
         }
       });

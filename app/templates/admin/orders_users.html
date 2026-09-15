@@ -1,62 +1,62 @@
 {% extends "admin/layout.html" %}
 
-{% block admin_title %}Order & User Risk Monitoring{% endblock %}
-{% block admin_subtitle %}Live Transaction Stream & Customer Risk Index Profiles{% endblock %}
+{% block admin_title %}Order & Customer Monitoring{% endblock %}
+{% block admin_subtitle %}Live Order Stream & Customer Telemetry Profiles{% endblock %}
 
 {% block admin_content %}
-<!-- Tab Switcher & Search Bar -->
-<div class="p-5 rounded-2xl bg-dark-900 border border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<!-- Tab Switcher & Search Bar (Light Blue SaaS Theme) -->
+<div class="p-5 admin-card flex flex-col md:flex-row md:items-center justify-between gap-4">
   
   <!-- Tabs -->
   <div class="flex items-center gap-2">
     <a href="{{ url_for('dashboard.orders_users', tab='orders', status=selected_status) }}" 
       class="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all
-      {% if current_tab == 'orders' %} bg-brand-600 text-white shadow-md shadow-brand-500/20
-      {% else %} bg-slate-800 text-slate-300 hover:bg-slate-700 {% endif %}">
+      {% if current_tab == 'orders' %} bg-sky-800 text-white shadow-xs
+      {% else %} bg-sky-50 text-sky-900 hover:bg-sky-100 border border-sky-200 {% endif %}">
       <i data-lucide="shopping-cart" class="w-3.5 h-3.5"></i>
       <span>Order Stream</span>
     </a>
     <a href="{{ url_for('dashboard.orders_users', tab='customers') }}" 
       class="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all
-      {% if current_tab == 'customers' %} bg-brand-600 text-white shadow-md shadow-brand-500/20
-      {% else %} bg-slate-800 text-slate-300 hover:bg-slate-700 {% endif %}">
+      {% if current_tab == 'customers' %} bg-sky-800 text-white shadow-xs
+      {% else %} bg-sky-50 text-sky-900 hover:bg-sky-100 border border-sky-200 {% endif %}">
       <i data-lucide="users" class="w-3.5 h-3.5"></i>
-      <span>Customer Risk Profiles</span>
+      <span>Customer Profiles</span>
     </a>
   </div>
 
   <!-- Search & Filters -->
-  <form action="{{ url_for('dashboard.orders_users') }}" method="GET" class="flex items-center gap-3">
+  <form action="{{ url_for('dashboard.orders_users') }}" method="GET" class="flex items-center gap-2.5">
     <input type="hidden" name="tab" value="{{ current_tab }}">
     <div class="relative">
       <input type="text" name="q" placeholder="Search ID, email, name..." value="{{ search_query }}"
-        class="w-56 sm:w-72 pl-9 pr-4 py-2 bg-slate-950 border border-slate-800 focus:border-brand-500 rounded-xl text-xs text-white outline-none transition-all">
-      <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3 top-2.5"></i>
+        class="w-56 sm:w-64 pl-9 pr-4 py-2 bg-sky-50/60 border border-sky-200 focus:bg-white focus:border-sky-500 rounded-xl text-xs text-slate-900 outline-none transition-all">
+      <i data-lucide="search" class="w-4 h-4 text-sky-600 absolute left-3 top-2.5"></i>
     </div>
-    <button type="submit" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs font-semibold">Filter</button>
+    <button type="submit" class="px-3.5 py-2 bg-sky-100 hover:bg-sky-200 text-sky-900 rounded-xl text-xs font-bold border border-sky-200 transition-all">Filter</button>
   </form>
 </div>
 
 {% if current_tab == 'orders' %}
-  <!-- Orders Stream Table -->
-  <div class="p-6 rounded-2xl bg-dark-900 border border-slate-800 space-y-4">
+  <!-- Orders Stream Table (Light Blue SaaS Theme) -->
+  <div class="p-6 admin-card space-y-4">
     <div class="flex items-center justify-between">
       <div>
-        <h3 class="text-sm font-bold text-white font-display">Live Order Transactions</h3>
-        <p class="text-xs text-slate-400">Chronological feed of orders screened by dynamic pricing & fraud models</p>
+        <h3 class="text-sm font-bold text-slate-900 font-display">Live Order Transactions</h3>
+        <p class="text-xs text-sky-900/70">Real-time stream of purchases screened by dynamic pricing and fraud models</p>
       </div>
-      <div class="flex items-center gap-2 text-xs">
-        <a href="{{ url_for('dashboard.orders_users', tab='orders') }}" class="px-2.5 py-1 rounded-lg {% if not selected_status %}bg-slate-800 text-white font-bold{% else %}text-slate-400 hover:text-white{% endif %}">All</a>
-        <a href="{{ url_for('dashboard.orders_users', tab='orders', status='APPROVED') }}" class="px-2.5 py-1 rounded-lg {% if selected_status == 'APPROVED' %}bg-emerald-950 text-emerald-400 font-bold border border-emerald-800{% else %}text-slate-400 hover:text-white{% endif %}">Approved</a>
-        <a href="{{ url_for('dashboard.orders_users', tab='orders', status='REVIEW') }}" class="px-2.5 py-1 rounded-lg {% if selected_status == 'REVIEW' %}bg-amber-950 text-amber-400 font-bold border border-amber-800{% else %}text-slate-400 hover:text-white{% endif %}">Under Review</a>
-        <a href="{{ url_for('dashboard.orders_users', tab='orders', status='BLOCKED') }}" class="px-2.5 py-1 rounded-lg {% if selected_status == 'BLOCKED' %}bg-rose-950 text-rose-400 font-bold border border-rose-800{% else %}text-slate-400 hover:text-white{% endif %}">Blocked</a>
+      <div class="flex items-center gap-1.5 text-xs">
+        <a href="{{ url_for('dashboard.orders_users', tab='orders') }}" class="px-2.5 py-1 rounded-lg font-bold {% if not selected_status %}bg-sky-800 text-white{% else %}text-sky-900 hover:bg-sky-100 bg-sky-50 border border-sky-200{% endif %}">All</a>
+        <a href="{{ url_for('dashboard.orders_users', tab='orders', status='APPROVED') }}" class="px-2.5 py-1 rounded-lg font-bold {% if selected_status == 'APPROVED' %}bg-emerald-600 text-white{% else %}text-sky-900 hover:bg-sky-100 bg-sky-50 border border-sky-200{% endif %}">Approved</a>
+        <a href="{{ url_for('dashboard.orders_users', tab='orders', status='REVIEW') }}" class="px-2.5 py-1 rounded-lg font-bold {% if selected_status == 'REVIEW' %}bg-amber-600 text-white{% else %}text-sky-900 hover:bg-sky-100 bg-sky-50 border border-sky-200{% endif %}">Under Review</a>
+        <a href="{{ url_for('dashboard.orders_users', tab='orders', status='BLOCKED') }}" class="px-2.5 py-1 rounded-lg font-bold {% if selected_status == 'BLOCKED' %}bg-rose-600 text-white{% else %}text-sky-900 hover:bg-sky-100 bg-sky-50 border border-sky-200{% endif %}">Blocked</a>
       </div>
     </div>
 
     <div class="overflow-x-auto">
       <table class="w-full text-left text-xs">
         <thead>
-          <tr class="border-b border-slate-800 text-slate-400 uppercase text-[10px] tracking-wider font-semibold">
+          <tr class="admin-table-header">
             <th class="py-3 px-3">Order ID</th>
             <th class="py-3 px-3">Customer</th>
             <th class="py-3 px-3">Product SKU</th>
@@ -68,37 +68,37 @@
             <th class="py-3 px-3 text-right">Status</th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-slate-800/60 font-medium">
+        <tbody class="divide-y divide-slate-100 font-medium">
           {% for order in orders %}
-            <tr class="hover:bg-slate-800/40 transition-colors">
-              <td class="py-3 px-3 font-mono text-white font-semibold">#{{ order.id[:8] }}</td>
-              <td class="py-3 px-3 text-slate-200">
-                <div>{{ order.customer.name if order.customer else 'Guest' }}</div>
-                <div class="text-[10px] text-slate-400 font-mono">{{ order.customer.email if order.customer else '' }}</div>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="py-3 px-3 font-mono text-slate-900 font-bold">#{{ order.id[:8] }}</td>
+              <td class="py-3 px-3">
+                <div class="text-slate-900 font-semibold">{{ order.customer.name if order.customer else 'Guest' }}</div>
+                <div class="text-[10px] text-slate-500 font-mono">{{ order.customer.email if order.customer else '' }}</div>
               </td>
-              <td class="py-3 px-3 text-slate-300 max-w-xs truncate">{{ order.product.name if order.product else 'SKU Deleted' }}</td>
-              <td class="py-3 px-3 font-mono text-slate-400">{{ order.quantity }}</td>
-              <td class="py-3 px-3 font-mono font-bold text-white">{{ order.price_paid | currency }}</td>
+              <td class="py-3 px-3 text-slate-700 max-w-xs truncate font-medium">{{ order.product.name if order.product else 'SKU Deleted' }}</td>
+              <td class="py-3 px-3 font-mono text-slate-600">{{ order.quantity }}</td>
+              <td class="py-3 px-3 font-mono font-bold text-slate-900">{{ order.price_paid | currency }}</td>
               <td class="py-3 px-3">
                 {% if order.coupon_code %}
-                  <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[10px]">{{ order.coupon_code }}</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono text-[10px] border border-slate-200">{{ order.coupon_code }}</span>
                 {% else %}
                   <span class="text-slate-400 text-[10px]">None</span>
                 {% endif %}
               </td>
               <td class="py-3 px-3">
                 {% if order.is_flash_sale %}
-                  <span class="px-2 py-0.5 rounded-full bg-brand-500/20 text-brand-400 text-[10px] font-bold border border-brand-500/30">Flash Sale</span>
+                  <span class="px-2 py-0.5 rounded-full bg-sky-50 text-sky-700 text-[10px] font-bold border border-sky-200">Flash Deal</span>
                 {% else %}
-                  <span class="text-slate-400 text-[10px]">Regular</span>
+                  <span class="text-slate-500 text-[10px]">Standard</span>
                 {% endif %}
               </td>
-              <td class="py-3 px-3 font-mono text-[11px] text-slate-400">{{ order.order_timestamp[:19].replace('T', ' ') }}</td>
+              <td class="py-3 px-3 font-mono text-[11px] text-slate-500">{{ order.order_timestamp[:19].replace('T', ' ') }}</td>
               <td class="py-3 px-3 text-right">
                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold border
-                  {% if order.status == 'BLOCKED' %} bg-rose-500/20 text-rose-400 border-rose-500/30
-                  {% elif order.status == 'REVIEW' %} bg-amber-500/20 text-amber-400 border-amber-500/30
-                  {% else %} bg-emerald-500/20 text-emerald-400 border-emerald-500/30 {% endif %}">
+                  {% if order.status == 'BLOCKED' %} bg-rose-50 text-rose-700 border-rose-200
+                  {% elif order.status == 'REVIEW' %} bg-amber-50 text-amber-700 border-amber-200
+                  {% else %} bg-emerald-50 text-emerald-700 border-emerald-200 {% endif %}">
                   {{ order.status }}
                 </span>
               </td>
@@ -110,57 +110,57 @@
   </div>
 
 {% else %}
-  <!-- Customers Risk Profiles Table -->
-  <div class="p-6 rounded-2xl bg-dark-900 border border-slate-800 space-y-4">
+  <!-- Customers Risk Profiles Table (Light Blue SaaS Theme) -->
+  <div class="p-6 admin-card space-y-4">
     <div class="flex items-center justify-between">
       <div>
-        <h3 class="text-sm font-bold text-white font-display">Customer Profiles & Telemetry Indices</h3>
-        <p class="text-xs text-slate-400">Behavioral risk scores calculated from device velocity, signup recency, and order volume</p>
+        <h3 class="text-sm font-bold text-slate-900 font-display">Indian Customer Telemetry Profiles</h3>
+        <p class="text-xs text-sky-900/70">Behavioral risk scores calculated from device velocity, signup recency, and order volume</p>
       </div>
-      <span class="text-xs font-mono text-slate-400">{{ customers|length }} Customers Analyzed</span>
+      <span class="text-xs font-mono font-bold text-sky-800 bg-sky-50 px-2.5 py-1 rounded-lg border border-sky-200">{{ customers|length }} Profiles Loaded</span>
     </div>
 
     <div class="overflow-x-auto">
       <table class="w-full text-left text-xs">
         <thead>
-          <tr class="border-b border-slate-800 text-slate-400 uppercase text-[10px] tracking-wider font-semibold">
+          <tr class="admin-table-header">
             <th class="py-3 px-3">Customer Name</th>
-            <th class="py-3 px-3">Email</th>
+            <th class="py-3 px-3">Email Address</th>
             <th class="py-3 px-3">Account Age</th>
-            <th class="py-3 px-3">Device ID Fingerprint</th>
+            <th class="py-3 px-3">Device Fingerprint</th>
             <th class="py-3 px-3">IP Address</th>
             <th class="py-3 px-3">Order History</th>
-            <th class="py-3 px-3 text-right">Risk Index</th>
+            <th class="py-3 px-3 text-right">Risk Assessment</th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-slate-800/60 font-medium">
+        <tbody class="divide-y divide-sky-100 font-medium">
           {% for cust in customers %}
-            <tr class="hover:bg-slate-800/40 transition-colors">
-              <td class="py-3 px-3 text-white font-bold">{{ cust.name }}</td>
-              <td class="py-3 px-3 font-mono text-slate-300">{{ cust.email }}</td>
+            <tr class="admin-table-row">
+              <td class="py-3 px-3 text-slate-900 font-bold">{{ cust.name }}</td>
+              <td class="py-3 px-3 font-mono text-slate-600">{{ cust.email }}</td>
               <td class="py-3 px-3">
-                <span class="font-mono text-slate-300">{{ cust.account_age_days }}</span>
-                <span class="text-[10px] text-slate-400">days</span>
+                <span class="font-mono text-slate-800 font-semibold">{{ cust.account_age_days }}</span>
+                <span class="text-[10px] text-slate-500">days</span>
               </td>
-              <td class="py-3 px-3 font-mono text-[11px] text-slate-400 max-w-xs truncate" title="{{ cust.device_id }}">
+              <td class="py-3 px-3 font-mono text-[11px] text-slate-500 max-w-xs truncate" title="{{ cust.device_id }}">
                 {{ cust.device_id[:16] }}...
               </td>
-              <td class="py-3 px-3 font-mono text-slate-300">{{ cust.ip_address }}</td>
+              <td class="py-3 px-3 font-mono text-slate-700">{{ cust.ip_address }}</td>
               <td class="py-3 px-3">
-                <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-200 font-mono">{{ cust.orders.count() }} orders</span>
+                <span class="px-2 py-0.5 rounded bg-sky-50 text-sky-800 font-mono border border-sky-200">{{ cust.orders.count() }} orders</span>
               </td>
               <td class="py-3 px-3 text-right">
                 {% if cust.account_age_days <= 2 and cust.orders.count() > 3 %}
-                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-rose-500/20 text-rose-400 border border-rose-500/30">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-rose-50 text-rose-700 border border-rose-200">
                     High Risk
                   </span>
                 {% elif cust.account_age_days < 30 %}
-                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-200">
                     Moderate Risk
                   </span>
                 {% else %}
-                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                    Low Risk (Verified)
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                    Verified Customer
                   </span>
                 {% endif %}
               </td>

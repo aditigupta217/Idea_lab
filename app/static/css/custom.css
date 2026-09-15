@@ -1,50 +1,169 @@
-/* Custom Modern SaaS Styles */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap');
+/* Tailored Modern Design System (Light Blue Admin & Distinct Customer Storefront) */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-display: 'Outfit', 'Inter', sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  
+  /* Admin Soft Light Blue Palette */
+  --admin-bg: #edf4fa;
+  --admin-sidebar-bg: #e2edf8;
+  --admin-header-bg: #f4f8fd;
+  --admin-card-bg: #ffffff;
+  --admin-border: #cfe0f2;
+  --admin-border-subtle: #dbe7f5;
+  --admin-accent: #0284c7;
+  --admin-accent-dark: #0369a1;
+  --admin-nav-active-bg: #d6e7f9;
+  --admin-nav-active-text: #0369a1;
+  
+  /* Customer Storefront Distinct Upper Palette */
+  --storefront-top-bg: #091322;
+  --storefront-header-bg: #0f1f38;
+  --storefront-header-border: #1a335a;
+  --storefront-hero-start: #0c192c;
+  --storefront-hero-mid: #112542;
+  --storefront-hero-end: #183358;
+  
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-subtle: #64748b;
 }
 
 body {
   font-family: var(--font-sans);
+  color: var(--text-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, .font-display {
+h1, h2, h3, h4, .font-display {
   font-family: var(--font-display);
+  letter-spacing: -0.02em;
 }
 
-/* Glassmorphism & Cards */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+/* Light Blue Admin Panel Styling */
+.admin-theme {
+  background-color: var(--admin-bg) !important;
 }
 
-.dark-glass {
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(51, 65, 85, 0.6);
+.admin-sidebar {
+  background-color: var(--admin-sidebar-bg) !important;
+  border-right: 1px solid var(--admin-border) !important;
 }
 
-/* Subtle Shimmer & Animations */
-@keyframes pulse-subtle {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
+.admin-header {
+  background-color: var(--admin-header-bg) !important;
+  border-bottom: 1px solid var(--admin-border) !important;
 }
 
-.animate-pulse-subtle {
-  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.admin-card {
+  background: #ffffff !important;
+  border: 1px solid var(--admin-border) !important;
+  border-radius: 16px;
+  box-shadow: 0 1px 4px 0 rgba(2, 132, 199, 0.05), 0 1px 2px -1px rgba(2, 132, 199, 0.04);
 }
 
-/* Smooth Transitions */
-.transition-smooth {
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+.admin-card:hover {
+  border-color: #bad6f5 !important;
+  box-shadow: 0 4px 14px -2px rgba(2, 132, 199, 0.09) !important;
 }
 
-/* Custom Scrollbar */
+.admin-nav-link {
+  color: #334155;
+  border-radius: 10px;
+  transition: all 0.15s ease-in-out;
+}
+
+.admin-nav-link:hover {
+  background-color: #dbeaf7;
+  color: #0c4a6e;
+}
+
+.admin-nav-link-active {
+  background-color: var(--admin-nav-active-bg) !important;
+  color: var(--admin-nav-active-text) !important;
+  font-weight: 700 !important;
+  border: 1px solid #bad6f5 !important;
+}
+
+/* Table Light Blue Theming */
+.admin-table-header {
+  background-color: #e4eef9 !important;
+  color: #1e3a8a !important;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--admin-border) !important;
+}
+
+.admin-table-row {
+  border-bottom: 1px solid #e7eff8;
+  transition: background-color 0.15s ease;
+}
+
+.admin-table-row:hover {
+  background-color: #f1f7fd !important;
+}
+
+/* Storefront Top Navigation Styling */
+.storefront-topbar {
+  background-color: var(--storefront-top-bg) !important;
+  color: #94a3b8;
+}
+
+.storefront-navbar {
+  background-color: var(--storefront-header-bg) !important;
+  border-bottom: 1px solid var(--storefront-header-border) !important;
+}
+
+.storefront-search-input {
+  background-color: #182e4e !important;
+  border: 1px solid #28446c !important;
+  color: #ffffff !important;
+}
+
+.storefront-search-input::placeholder {
+  color: #94a3b8 !important;
+}
+
+.storefront-search-input:focus {
+  background-color: #1e385f !important;
+  border-color: #38bdf8 !important;
+}
+
+.storefront-hero {
+  background: linear-gradient(135deg, var(--storefront-hero-start) 0%, var(--storefront-hero-mid) 50%, var(--storefront-hero-end) 100%) !important;
+  border-bottom: 1px solid var(--storefront-header-border) !important;
+}
+
+/* Status Pills */
+.pill-success {
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.pill-warning {
+  background-color: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.pill-danger {
+  background-color: #fff1f2;
+  color: #be123c;
+  border: 1px solid #fecdd3;
+}
+
+.pill-info {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+/* Subtle Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -54,22 +173,8 @@ h1, h2, h3, .font-display {
 }
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
-  border-radius: 9999px;
+  border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
-}
-
-/* Badge Glows */
-.glow-emerald {
-  box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
-}
-.glow-rose {
-  box-shadow: 0 0 12px rgba(244, 63, 94, 0.25);
-}
-.glow-amber {
-  box-shadow: 0 0 12px rgba(245, 158, 11, 0.25);
-}
-.glow-indigo {
-  box-shadow: 0 0 12px rgba(99, 102, 241, 0.25);
 }

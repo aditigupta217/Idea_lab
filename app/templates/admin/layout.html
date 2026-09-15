@@ -1,125 +1,126 @@
 {% extends "base.html" %}
 
-{% block title %}Admin Command Center | Dynamic Pricing & Fraud Shield{% endblock %}
+{% block title %}Admin Dashboard | Dynamic Pricing & Fraud Operations{% endblock %}
 
 {% block body %}
-<div class="h-screen flex overflow-hidden bg-slate-950 text-slate-100 selection:bg-brand-500 selection:text-white">
+<div class="h-screen flex overflow-hidden admin-theme text-slate-900 selection:bg-brand-500 selection:text-white">
   
-  <!-- Sidebar Navigation (Linear / Stripe Inspired) -->
-  <aside class="w-64 flex-shrink-0 bg-dark-900 border-r border-slate-800 flex flex-col justify-between select-none">
+  <!-- Sidebar Navigation (Soothing Light-Blue SaaS Theme) -->
+  <aside class="w-64 flex-shrink-0 admin-sidebar flex flex-col justify-between select-none">
     <div>
-      <!-- Brand & Product Header -->
-      <div class="h-16 flex items-center justify-between px-5 border-b border-slate-800/80">
+      <!-- Brand & Dashboard Header -->
+      <div class="h-16 flex items-center justify-between px-5 border-b border-[#cfe0f2]">
         <a href="{{ url_for('dashboard.overview') }}" class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-500 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-brand-500/30">
-            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          <div class="w-8 h-8 rounded-lg bg-sky-700 flex items-center justify-center text-white font-bold shadow-sm">
+            <i data-lucide="shield-check" class="w-4 h-4 text-sky-200"></i>
           </div>
           <div>
-            <div class="font-bold text-sm tracking-tight text-white font-display flex items-center gap-1.5">
-              <span>FLASH SHIELD</span>
-              <span class="text-[9px] px-1.5 py-0.5 rounded bg-brand-500/20 text-brand-400 font-mono font-bold uppercase tracking-wider">AI</span>
+            <div class="font-bold text-sm tracking-tight text-slate-900 font-display flex items-center gap-1.5">
+              <span>Flash Shield</span>
+              <span class="text-[9px] px-1.5 py-0.2 rounded bg-sky-100 text-sky-800 font-semibold border border-sky-200">v2.4</span>
             </div>
-            <div class="text-[10px] text-slate-400 font-medium">Pricing & Fraud Command</div>
+            <div class="text-[10px] text-sky-700 font-medium">Pricing & Fraud Operations</div>
           </div>
         </a>
       </div>
 
       <!-- Navigation Links -->
       <div class="p-3 space-y-1">
-        <div class="px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">Core Systems</div>
+        <div class="px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-sky-900/60">Core Modules</div>
         
         <a href="{{ url_for('dashboard.overview') }}" 
-          class="flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-lg transition-all
-          {% if request.path == '/admin/' or request.path == '/admin' %} bg-brand-600/20 text-brand-300 border border-brand-500/30
-          {% else %} text-slate-300 hover:text-white hover:bg-slate-800/60 {% endif %}">
-          <i data-lucide="layout-dashboard" class="w-4 h-4 text-brand-400"></i>
+          class="flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl transition-all admin-nav-link
+          {% if request.path == '/admin/' or request.path == '/admin' %} admin-nav-link-active shadow-xs
+          {% endif %}">
+          <i data-lucide="layout-dashboard" class="w-4 h-4 {% if request.path == '/admin/' or request.path == '/admin' %}text-sky-700{% else %}text-sky-800/70{% endif %}"></i>
           <span>Overview</span>
         </a>
 
         <a href="{{ url_for('dashboard.pricing') }}" 
-          class="flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-lg transition-all
-          {% if '/admin/pricing' in request.path %} bg-brand-600/20 text-brand-300 border border-brand-500/30
-          {% else %} text-slate-300 hover:text-white hover:bg-slate-800/60 {% endif %}">
-          <i data-lucide="trending-up" class="w-4 h-4 text-emerald-400"></i>
+          class="flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl transition-all admin-nav-link
+          {% if '/admin/pricing' in request.path %} admin-nav-link-active shadow-xs
+          {% endif %}">
+          <i data-lucide="trending-up" class="w-4 h-4 {% if '/admin/pricing' in request.path %}text-emerald-700{% else %}text-sky-800/70{% endif %}"></i>
           <span>Dynamic Pricing</span>
         </a>
 
         <a href="{{ url_for('dashboard.fraud_alerts') }}" 
-          class="flex items-center justify-between px-3 py-2 text-xs font-semibold rounded-lg transition-all
-          {% if '/admin/fraud-alerts' in request.path %} bg-brand-600/20 text-brand-300 border border-brand-500/30
-          {% else %} text-slate-300 hover:text-white hover:bg-slate-800/60 {% endif %}">
+          class="flex items-center justify-between px-3 py-2 text-xs font-semibold rounded-xl transition-all admin-nav-link
+          {% if '/admin/fraud-alerts' in request.path %} admin-nav-link-active shadow-xs
+          {% endif %}">
           <div class="flex items-center gap-3">
-            <i data-lucide="shield-alert" class="w-4 h-4 text-rose-400"></i>
-            <span>Fraud Alerts</span>
+            <i data-lucide="shield-alert" class="w-4 h-4 {% if '/admin/fraud-alerts' in request.path %}text-rose-700{% else %}text-sky-800/70{% endif %}"></i>
+            <span>Fraud Queue</span>
           </div>
-          <span class="px-1.5 py-0.5 rounded-full bg-rose-500/20 text-rose-400 text-[10px] font-bold">Live</span>
+          <span class="px-1.5 py-0.5 rounded-full bg-rose-100 text-rose-800 text-[10px] font-bold border border-rose-300">Live</span>
         </a>
 
         <a href="{{ url_for('dashboard.orders_users') }}" 
-          class="flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-lg transition-all
-          {% if '/admin/orders-users' in request.path %} bg-brand-600/20 text-brand-300 border border-brand-500/30
-          {% else %} text-slate-300 hover:text-white hover:bg-slate-800/60 {% endif %}">
-          <i data-lucide="users" class="w-4 h-4 text-sky-400"></i>
+          class="flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl transition-all admin-nav-link
+          {% if '/admin/orders-users' in request.path %} admin-nav-link-active shadow-xs
+          {% endif %}">
+          <i data-lucide="users" class="w-4 h-4 {% if '/admin/orders-users' in request.path %}text-sky-700{% else %}text-sky-800/70{% endif %}"></i>
           <span>Orders & Users</span>
         </a>
 
-        <div class="pt-4 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">Intelligence</div>
+        <div class="pt-4 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-sky-900/60">Analytics & Models</div>
 
         <a href="{{ url_for('dashboard.analytics') }}" 
-          class="flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-lg transition-all
-          {% if '/admin/analytics' in request.path %} bg-brand-600/20 text-brand-300 border border-brand-500/30
-          {% else %} text-slate-300 hover:text-white hover:bg-slate-800/60 {% endif %}">
-          <i data-lucide="bar-chart-3" class="w-4 h-4 text-amber-400"></i>
+          class="flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl transition-all admin-nav-link
+          {% if '/admin/analytics' in request.path %} admin-nav-link-active shadow-xs
+          {% endif %}">
+          <i data-lucide="bar-chart-3" class="w-4 h-4 {% if '/admin/analytics' in request.path %}text-amber-700{% else %}text-sky-800/70{% endif %}"></i>
           <span>Sales Analytics</span>
         </a>
 
         <a href="{{ url_for('dashboard.model_metrics') }}" 
-          class="flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-lg transition-all
-          {% if '/admin/model-metrics' in request.path %} bg-brand-600/20 text-brand-300 border border-brand-500/30
-          {% else %} text-slate-300 hover:text-white hover:bg-slate-800/60 {% endif %}">
-          <i data-lucide="cpu" class="w-4 h-4 text-purple-400"></i>
+          class="flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl transition-all admin-nav-link
+          {% if '/admin/model-metrics' in request.path %} admin-nav-link-active shadow-xs
+          {% endif %}">
+          <i data-lucide="cpu" class="w-4 h-4 {% if '/admin/model-metrics' in request.path %}text-purple-700{% else %}text-sky-800/70{% endif %}"></i>
           <span>Model Performance</span>
         </a>
 
         <a href="{{ url_for('dashboard.reports') }}" 
-          class="flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-lg transition-all
-          {% if '/admin/reports' in request.path %} bg-brand-600/20 text-brand-300 border border-brand-500/30
-          {% else %} text-slate-300 hover:text-white hover:bg-slate-800/60 {% endif %}">
-          <i data-lucide="file-text" class="w-4 h-4 text-teal-400"></i>
+          class="flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded-xl transition-all admin-nav-link
+          {% if '/admin/reports' in request.path %} admin-nav-link-active shadow-xs
+          {% endif %}">
+          <i data-lucide="file-text" class="w-4 h-4 {% if '/admin/reports' in request.path %}text-teal-700{% else %}text-sky-800/70{% endif %}"></i>
           <span>Reports & Export</span>
         </a>
       </div>
     </div>
 
-    <!-- Bottom Sidebar Controls -->
-    <div class="p-3 border-t border-slate-800/80 space-y-3 bg-dark-950/40">
-      <!-- AI Engine Status Badge -->
-      <div class="p-2.5 rounded-lg bg-slate-900/90 border border-slate-800 flex items-center justify-between text-[11px]">
+    <!-- Bottom Sidebar Controls (Light Blue Themed) -->
+    <div class="p-3 border-t border-[#cfe0f2] space-y-3 bg-[#dae8f6]">
+      
+      <!-- System Status Pill -->
+      <div class="p-2.5 rounded-xl bg-white border border-[#bad4ee] flex items-center justify-between text-[11px] shadow-xs">
         <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span class="text-slate-300 font-medium">AI Shield Online</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="text-slate-800 font-bold">Models Online</span>
         </div>
-        <span class="text-[9px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/40 px-1 rounded">2 Models</span>
+        <span class="text-[9px] font-mono text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded-md border border-emerald-200 font-bold">2 Active</span>
       </div>
 
       <!-- Switch to Storefront Button -->
-      <a href="{{ url_for('products.index') }}" class="w-full flex items-center justify-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg bg-slate-800/90 hover:bg-slate-700/90 text-slate-200 border border-slate-700 transition-all">
-        <i data-lucide="shopping-bag" class="w-3.5 h-3.5 text-brand-400"></i>
-        <span>Open Storefront</span>
+      <a href="{{ url_for('products.index') }}" class="w-full flex items-center justify-center gap-2 px-3 py-2 text-xs font-bold rounded-xl bg-white hover:bg-sky-50 text-sky-900 border border-[#bad4ee] transition-all shadow-xs">
+        <i data-lucide="external-link" class="w-3.5 h-3.5 text-sky-600"></i>
+        <span>Customer Storefront</span>
       </a>
 
       <!-- Admin Identity & Logout -->
       <div class="flex items-center justify-between pt-1 px-1">
         <div class="flex items-center gap-2">
-          <div class="w-7 h-7 rounded-lg bg-brand-600 flex items-center justify-center text-xs font-bold text-white">
+          <div class="w-7 h-7 rounded-full bg-sky-800 text-white flex items-center justify-center text-xs font-bold shadow-xs">
             A
           </div>
           <div class="text-[11px]">
-            <div class="font-semibold text-slate-200 leading-tight">Admin System</div>
-            <div class="text-[10px] text-slate-400">admin@idealab.com</div>
+            <div class="font-bold text-slate-900 leading-tight">Admin System</div>
+            <div class="text-[10px] text-sky-700">admin@idealab.com</div>
           </div>
         </div>
-        <a href="{{ url_for('auth.logout') }}" title="Log Out" class="p-1.5 text-slate-400 hover:text-rose-400 hover:bg-slate-800 rounded transition-colors">
+        <a href="{{ url_for('auth.logout') }}" title="Sign Out" class="p-1.5 text-slate-500 hover:text-rose-600 hover:bg-white rounded-lg transition-colors">
           <i data-lucide="log-out" class="w-4 h-4"></i>
         </a>
       </div>
@@ -127,27 +128,27 @@
   </aside>
 
   <!-- Main Content Wrapper -->
-  <div class="flex-1 flex flex-col min-w-0 overflow-hidden bg-slate-950">
+  <div class="flex-1 flex flex-col min-w-0 overflow-hidden admin-theme">
     
-    <!-- Top Header -->
-    <header class="h-16 bg-dark-900/80 backdrop-blur-md border-b border-slate-800/80 px-6 flex items-center justify-between flex-shrink-0">
-      <div class="flex items-center gap-3">
-        <h1 class="text-base font-bold text-white font-display">{% block admin_title %}Dashboard{% endblock %}</h1>
-        <span class="text-slate-600 text-sm">/</span>
-        <span class="text-xs font-medium text-slate-400">{% block admin_subtitle %}Overview & Real-time Telemetry{% endblock %}</span>
+    <!-- Top Header (Light Blue Theme) -->
+    <header class="h-16 admin-header px-6 flex items-center justify-between flex-shrink-0 shadow-xs">
+      <div class="flex items-center gap-2.5">
+        <h1 class="text-sm font-bold text-slate-900 font-display">{% block admin_title %}Dashboard{% endblock %}</h1>
+        <span class="text-sky-300">/</span>
+        <span class="text-xs text-sky-800/80 font-medium">{% block admin_subtitle %}Overview & Operations{% endblock %}</span>
       </div>
 
       <!-- Quick Action Controls -->
       <div class="flex items-center gap-3">
         <!-- Live Attack Simulator Quick Trigger Button -->
-        <button onclick="triggerSimulatedAttackModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-950/60 hover:bg-rose-900/70 border border-rose-800/50 text-rose-300 text-xs font-semibold shadow-sm transition-all">
-          <i data-lucide="zap" class="w-3.5 h-3.5 text-rose-400"></i>
-          <span>Simulate Attack</span>
+        <button onclick="triggerSimulatedAttackModal()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-700 text-xs font-bold transition-all shadow-xs">
+          <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-rose-600"></i>
+          <span>Simulate Threat Burst</span>
         </button>
 
         <!-- Quick Apply All Pricing Button -->
-        <button onclick="applyAllPricingModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-950/60 hover:bg-emerald-900/70 border border-emerald-800/50 text-emerald-300 text-xs font-semibold shadow-sm transition-all">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-emerald-400"></i>
+        <button onclick="applyAllPricingModal()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-sky-700 hover:bg-sky-800 text-white text-xs font-bold shadow-sm transition-all">
+          <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
           <span>Run Dynamic Pricing</span>
         </button>
       </div>
@@ -160,42 +161,42 @@
   </div>
 </div>
 
-<!-- Simulated Attack Demo Modal -->
-<div id="sim-attack-modal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-  <div class="bg-dark-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl space-y-4">
-    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-      <div class="flex items-center gap-2">
-        <div class="p-2 rounded-lg bg-rose-500/20 text-rose-400">
+<!-- Simulated Attack Demo Modal (Clean Light Theme) -->
+<div id="sim-attack-modal" class="hidden fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4">
+  <div class="bg-white border border-[#bad4ee] rounded-2xl max-w-lg w-full p-6 shadow-xl space-y-4">
+    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+      <div class="flex items-center gap-2.5">
+        <div class="p-2 rounded-lg bg-rose-50 text-rose-700">
           <i data-lucide="shield-alert" class="w-5 h-5"></i>
         </div>
         <div>
-          <h3 class="font-bold text-base text-white">Live Threat Simulation</h3>
-          <p class="text-xs text-slate-400">Test the real-time AI & rule-based fraud defense layer</p>
+          <h3 class="font-bold text-base text-slate-900">Security Threat Simulation</h3>
+          <p class="text-xs text-slate-500">Inject test traffic to evaluate the real-time screening shield</p>
         </div>
       </div>
-      <button onclick="closeSimModal()" class="text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <button onclick="closeSimModal()" class="text-slate-400 hover:text-slate-600"><i data-lucide="x" class="w-5 h-5"></i></button>
     </div>
 
     <div class="space-y-3 text-xs">
-      <label class="block font-semibold text-slate-300">Select Attack Vector to Inject:</label>
+      <label class="block font-semibold text-slate-700">Select Test Vector:</label>
       <div class="grid grid-cols-2 gap-3">
-        <button onclick="runSimulation('bot_burst')" id="btn-bot" class="p-3 text-left rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-brand-500 transition-all">
-          <div class="font-bold text-white flex items-center gap-1.5"><i data-lucide="bot" class="w-4 h-4 text-purple-400"></i> Bot Velocity Burst</div>
-          <div class="text-[11px] text-slate-400 mt-1">6 rapid checkouts in &lt;30s</div>
+        <button onclick="runSimulation('bot_burst')" class="p-3 text-left rounded-xl bg-sky-50/60 hover:bg-sky-50 border border-sky-200 transition-all">
+          <div class="font-bold text-slate-900 flex items-center gap-1.5"><i data-lucide="bot" class="w-4 h-4 text-purple-600"></i> Bot Velocity Burst</div>
+          <div class="text-[11px] text-slate-500 mt-1">6 rapid checkouts in &lt;30s</div>
         </button>
-        <button onclick="runSimulation('coupon_spam')" id="btn-coupon" class="p-3 text-left rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-brand-500 transition-all">
-          <div class="font-bold text-white flex items-center gap-1.5"><i data-lucide="ticket" class="w-4 h-4 text-cyan-400"></i> Coupon Cycling</div>
-          <div class="text-[11px] text-slate-400 mt-1">Automated discount abuse burst</div>
+        <button onclick="runSimulation('coupon_spam')" class="p-3 text-left rounded-xl bg-sky-50/60 hover:bg-sky-50 border border-sky-200 transition-all">
+          <div class="font-bold text-slate-900 flex items-center gap-1.5"><i data-lucide="ticket" class="w-4 h-4 text-sky-600"></i> Coupon Cycling Burst</div>
+          <div class="text-[11px] text-slate-500 mt-1">Automated discount abuse</div>
         </button>
       </div>
 
-      <div id="sim-results" class="hidden mt-4 p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2 max-h-48 overflow-y-auto">
+      <div id="sim-results" class="hidden mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2 max-h-48 overflow-y-auto">
         <!-- Injected dynamically -->
       </div>
     </div>
 
-    <div class="flex justify-end gap-2 pt-2 border-t border-slate-800">
-      <button onclick="closeSimModal()" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200">Close</button>
+    <div class="flex justify-end gap-2 pt-2 border-t border-slate-100">
+      <button onclick="closeSimModal()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-semibold text-slate-700">Close</button>
     </div>
   </div>
 </div>
@@ -214,7 +215,7 @@
   async function runSimulation(type) {
     const resBox = document.getElementById('sim-results');
     resBox.classList.remove('hidden');
-    resBox.innerHTML = `<div class="text-slate-400 flex items-center gap-2"><i data-lucide="loader-2" class="w-4 h-4 animate-spin text-brand-400"></i> Injecting attack traffic through AI Fraud Shield...</div>`;
+    resBox.innerHTML = `<div class="text-slate-500 flex items-center gap-2"><i data-lucide="loader-2" class="w-4 h-4 animate-spin text-slate-700"></i> Screening simulated transactions through Fraud Shield...</div>`;
     lucide.createIcons();
 
     try {
@@ -225,31 +226,31 @@
       });
       const data = await response.json();
       
-      let html = `<div class="text-xs font-bold text-emerald-400 mb-2">Shield Intercepted ${data.simulated_attempts} Threat Transactions:</div>`;
+      let html = `<div class="text-xs font-bold text-slate-900 mb-2">Shield Screened ${data.simulated_attempts} Transactions:</div>`;
       data.intercepted_results.forEach((r, idx) => {
-        const badgeColor = r.decision === 'BLOCKED' ? 'text-rose-400 bg-rose-950/60 border-rose-800' : 'text-amber-400 bg-amber-950/60 border-amber-800';
+        const badgeColor = r.decision === 'BLOCKED' ? 'text-rose-700 bg-rose-50 border-rose-200' : 'text-amber-800 bg-amber-50 border-amber-200';
         html += `
-          <div class="p-2 rounded bg-slate-900 border border-slate-800 flex items-center justify-between text-[11px] mb-1.5">
+          <div class="p-2.5 rounded-lg bg-white border border-slate-200 flex items-center justify-between text-[11px] mb-1.5 shadow-xs">
             <div>
-              <span class="font-mono text-slate-400">#${r.order_id.substring(0,8)}</span>
+              <span class="font-mono text-slate-700 font-bold">#${r.order_id.substring(0,8)}</span>
               <div class="text-[10px] text-slate-500">${r.signals[0] || 'Anomaly detected'}</div>
             </div>
             <div class="text-right">
-              <span class="px-1.5 py-0.5 rounded text-[10px] font-bold border ${badgeColor}">${r.decision}</span>
-              <div class="text-[9px] text-slate-400 font-mono">Risk: ${(r.risk_score * 100).toFixed(0)}%</div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold border ${badgeColor}">${r.decision}</span>
+              <div class="text-[10px] text-slate-600 font-mono mt-0.5">Risk: ${(r.risk_score * 100).toFixed(0)}%</div>
             </div>
           </div>
         `;
       });
       resBox.innerHTML = html;
-      window.showToast("Attack simulation intercepted and logged to Fraud Alerts!", "success");
+      window.showToast("Attack simulation completed & logged to Fraud queue.", "success");
     } catch(err) {
-      resBox.innerHTML = `<div class="text-rose-400 text-xs">Simulation error: ${err.message}</div>`;
+      resBox.innerHTML = `<div class="text-rose-600 text-xs">Simulation error: ${err.message}</div>`;
     }
   }
 
   async function applyAllPricingModal() {
-    if (!confirm("Run dynamic pricing optimization across the entire catalog and update active flash sales?")) return;
+    if (!confirm("Run dynamic pricing model across all catalog SKUs and update active flash sales?")) return;
     try {
       const resp = await fetch('/api/pricing/apply-all', {method: 'POST'});
       const data = await resp.json();

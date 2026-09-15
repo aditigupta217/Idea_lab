@@ -1,33 +1,33 @@
 {% extends "base.html" %}
 
-{% block title %}Sign In | FlashDeals AI{% endblock %}
+{% block title %}Sign In | FlashDeals India{% endblock %}
 
 {% block content %}
 <div class="min-h-[80vh] flex items-center justify-center px-4 py-12">
-  <div class="max-w-md w-full p-8 rounded-2xl bg-white border border-slate-200 shadow-xl shadow-slate-200/50 space-y-6">
+  <div class="max-w-md w-full p-8 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-6">
     
-    <div class="text-center space-y-2">
-      <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center text-white mx-auto shadow-md shadow-brand-500/20">
-        <i data-lucide="zap" class="w-6 h-6 fill-current"></i>
+    <div class="text-center space-y-1.5">
+      <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-white mx-auto shadow-xs">
+        <i data-lucide="shopping-bag" class="w-5 h-5"></i>
       </div>
-      <h2 class="text-2xl font-bold font-display text-slate-900 tracking-tight">Welcome to FlashDeals</h2>
-      <p class="text-xs text-slate-500">Sign in to access exclusive AI-discounted flash sales</p>
+      <h2 class="text-2xl font-bold font-display text-slate-900 tracking-tight">Sign In to FlashDeals</h2>
+      <p class="text-xs text-slate-500">Access exclusive Indian flash discounts and manage your orders</p>
     </div>
 
-    <!-- Demo Credential Callout -->
-    <div class="p-3 rounded-xl bg-brand-50 border border-brand-100 text-xs text-brand-900 flex items-center justify-between">
+    <!-- Demo Credential Callout (Clean Light Theme) -->
+    <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 flex items-center justify-between">
       <div>
-        <span class="font-bold">Demo Customer:</span>
-        <div class="font-mono text-[11px] text-brand-700">customer@idealab.com / customer123</div>
+        <span class="font-bold text-slate-900">Demo Customer Account:</span>
+        <div class="font-mono text-[11px] text-slate-600">customer@idealab.com / customer123</div>
       </div>
-      <button onclick="fillDemoCustomer()" class="px-2 py-1 rounded bg-brand-600 hover:bg-brand-700 text-white text-[10px] font-bold">Auto-Fill</button>
+      <button onclick="fillDemoCustomer()" class="px-2.5 py-1 rounded-lg bg-white hover:bg-slate-100 text-slate-800 text-[10px] font-bold border border-slate-200">Auto-Fill</button>
     </div>
 
     <form action="{{ url_for('auth.login') }}" method="POST" class="space-y-4 text-xs">
       <div>
         <label class="block font-semibold text-slate-700 mb-1">Email Address</label>
-        <input type="email" name="email" id="input-email" required placeholder="you@example.com"
-          class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-brand-500 outline-none transition-all">
+        <input type="email" name="email" id="input-email" required placeholder="name@example.com"
+          class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-slate-400 outline-none transition-all text-slate-900">
       </div>
 
       <div>
@@ -35,17 +35,17 @@
           <label class="font-semibold text-slate-700">Password</label>
         </div>
         <input type="password" name="password" id="input-password" required placeholder="••••••••"
-          class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-brand-500 outline-none transition-all">
+          class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-slate-400 outline-none transition-all text-slate-900">
       </div>
 
       <button type="submit" 
-        class="w-full py-3 px-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-md shadow-brand-500/20 transition-all">
-        Sign In to Storefront
+        class="w-full py-3 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-xs transition-all">
+        Sign In
       </button>
     </form>
 
     <div class="text-center pt-2 border-t border-slate-100 text-xs text-slate-500">
-      Don't have an account? <a href="{{ url_for('auth.register') }}" class="font-bold text-brand-600 hover:underline">Create an account</a>
+      Don't have an account? <a href="{{ url_for('auth.register') }}" class="font-bold text-slate-900 hover:underline">Create an account</a>
     </div>
   </div>
 </div>

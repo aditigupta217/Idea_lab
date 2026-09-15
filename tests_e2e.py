@@ -86,7 +86,7 @@ class EndToEndTestSuite(unittest.TestCase):
         # Overview
         resp = self.client.get('/admin/')
         self.assertEqual(resp.status_code, 200)
-        self.assertIn(b'FLASH SHIELD', resp.data)
+        self.assertIn(b'Flash Shield', resp.data)
 
         # Pricing View
         resp = self.client.get('/admin/pricing')

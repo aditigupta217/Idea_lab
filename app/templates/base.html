@@ -3,39 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}FlashDeals | AI Dynamic Pricing & Fraud Shield{% endblock %}</title>
+  <title>{% block title %}FlashDeals India | E-Commerce Flash Sales & Secure Checkout{% endblock %}</title>
   
-  <!-- Tailwind CSS CDN with Plugins -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           colors: {
             brand: {
-              50: '#eef2ff',
-              100: '#e0e7ff',
-              200: '#c7d2fe',
-              300: '#a5b4fc',
-              400: '#818cf8',
-              500: '#6366f1',
-              600: '#4f46e5',
-              700: '#4338ca',
-              800: '#3730a3',
-              900: '#312e81',
-              950: '#1e1b4b',
+              50: '#f0f7ff',
+              100: '#e0effe',
+              200: '#bae0fd',
+              300: '#7cc7fb',
+              400: '#38a8f8',
+              500: '#0e8ce9',
+              600: '#0270c7',
+              700: '#0359a1',
+              800: '#074c85',
+              900: '#0c3f6e',
+              950: '#082849',
             },
-            dark: {
-              800: '#1e293b',
+            slate: {
+              750: '#293548',
               850: '#172033',
-              900: '#0f172a',
-              950: '#090d16'
             }
           },
           fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            display: ['Outfit', 'Inter', 'sans-serif'],
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
           }
         }
       }
@@ -53,21 +50,21 @@
   
   {% block extra_head %}{% endblock %}
 </head>
-<body class="h-full flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+<body class="h-full flex flex-col antialiased bg-slate-50 text-slate-800 selection:bg-brand-500 selection:text-white">
 
   <!-- Flash Messages Toast / Alerts -->
   <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-2 max-w-md w-full pointer-events-none">
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
         {% for category, message in messages %}
-          <div class="pointer-events-auto flex items-center gap-3 p-4 rounded-xl shadow-lg border text-sm font-medium transition-all duration-300 transform translate-y-0
+          <div class="pointer-events-auto flex items-center gap-3 p-4 rounded-xl shadow-lg border text-sm font-medium transition-all duration-300
             {% if category == 'error' %} bg-rose-50 text-rose-800 border-rose-200
             {% elif category == 'success' %} bg-emerald-50 text-emerald-800 border-emerald-200
-            {% elif category == 'info' %} bg-blue-50 text-blue-800 border-blue-200
-            {% else %} bg-slate-900 text-white border-slate-800 {% endif %}">
+            {% elif category == 'info' %} bg-sky-50 text-sky-800 border-sky-200
+            {% else %} bg-white text-slate-800 border-slate-200 shadow-md {% endif %}">
             <i data-lucide="{% if category == 'error' %}alert-circle{% elif category == 'success' %}check-circle-2{% else %}info{% endif %}" class="w-5 h-5 flex-shrink-0"></i>
             <div class="flex-1">{{ message }}</div>
-            <button onclick="this.parentElement.remove()" class="opacity-70 hover:opacity-100"><i data-lucide="x" class="w-4 h-4"></i></button>
+            <button onclick="this.parentElement.remove()" class="text-slate-400 hover:text-slate-600"><i data-lucide="x" class="w-4 h-4"></i></button>
           </div>
         {% endfor %}
       {% endif %}
@@ -75,75 +72,93 @@
   </div>
 
   {% block body %}
-    <!-- Storefront Navigation Header -->
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-          <!-- Logo & Branding -->
-          <div class="flex items-center gap-8">
-            <a href="{{ url_for('products.index') }}" class="flex items-center gap-2 group">
-              <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
-                <i data-lucide="zap" class="w-5 h-5 fill-current"></i>
-              </div>
-              <div class="flex flex-col">
-                <span class="text-lg font-bold font-display tracking-tight text-slate-900 group-hover:text-brand-600 transition-colors">Flash<span class="text-brand-600">Deals</span></span>
-                <span class="text-[10px] font-semibold uppercase tracking-wider text-slate-600 -mt-1">AI Dynamic Pricing</span>
-              </div>
+    <!-- Storefront Navigation Header (Distinct Deep Sapphire Navy & Light Blue Styling) -->
+    <header class="sticky top-0 z-40 storefront-navbar border-b border-[#1a335a] shadow-md transition-all">
+      <!-- Top announcement bar -->
+      <div class="storefront-topbar text-white text-[11px] py-1.5 px-4 font-medium border-b border-[#142642]">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="inline-block w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+            <span class="text-slate-200">⚡ <strong class="text-sky-300">Mega Lightning Deals:</strong> Live AI Dynamic Discounts on Electronics, Fashion & Home</span>
+          </div>
+          <div class="hidden sm:flex items-center gap-4 text-slate-300">
+            <span class="text-slate-300 flex items-center gap-1"><i data-lucide="truck" class="w-3 h-3 text-emerald-400"></i> Free Delivery Pan-India</span>
+            <span class="text-slate-500">•</span>
+            <a href="{{ url_for('dashboard.overview') }}" class="text-sky-300 hover:text-white font-semibold flex items-center gap-1.5 transition-colors">
+              <i data-lucide="shield" class="w-3 h-3 text-sky-400"></i>
+              <span>Admin Console</span>
             </a>
+          </div>
+        </div>
+      </div>
 
-            <!-- Live Flash Sale Ticker -->
-            <div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-50 border border-rose-100 text-rose-700 text-xs font-semibold animate-pulse-subtle">
-              <span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
-              <span>LIVE FLASH SALE ENDS IN:</span>
-              <span id="nav-countdown" class="font-mono font-bold text-rose-600">03:42:15</span>
+      <!-- Main Navigation Bar -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 gap-6">
+          
+          <!-- Logo & Branding -->
+          <a href="{{ url_for('products.index') }}" class="flex items-center gap-2.5 flex-shrink-0 group">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-400 to-indigo-600 flex items-center justify-center text-white font-bold shadow-md group-hover:scale-105 transition-transform">
+              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
             </div>
+            <div class="flex flex-col">
+              <span class="text-xl font-extrabold font-display tracking-tight text-white">Flash<span class="text-sky-400">Deals</span></span>
+              <span class="text-[9px] font-bold text-sky-300 uppercase tracking-widest -mt-1">India Storefront</span>
+            </div>
+          </a>
+
+          <!-- Search Bar (Luminous & Styled) -->
+          <div class="flex-1 max-w-xl hidden md:block">
+            <form action="{{ url_for('products.index') }}" method="GET" class="relative">
+              <input type="text" name="q" placeholder="Search smartphones, boAt headphones, Smart TVs, Levi's jeans, kurtis..." value="{{ request.args.get('q', '') }}" 
+                class="storefront-search-input w-full pl-10 pr-4 py-2.5 text-xs rounded-xl outline-none focus:ring-2 focus:ring-sky-400/50 transition-all shadow-inner">
+              <i data-lucide="search" class="w-4 h-4 text-sky-300 absolute left-3.5 top-3"></i>
+            </form>
           </div>
 
           <!-- Nav Actions -->
-          <div class="flex items-center gap-4">
-            <!-- Search Quick Bar -->
-            <form action="{{ url_for('products.index') }}" method="GET" class="hidden sm:block relative">
-              <input type="text" name="q" placeholder="Search flash deals..." value="{{ request.args.get('q', '') }}" 
-                class="w-48 lg:w-64 pl-9 pr-4 py-1.5 text-xs bg-slate-100 hover:bg-slate-50 focus:bg-white border border-transparent focus:border-brand-500 rounded-lg outline-none transition-all">
-              <i data-lucide="search" class="w-4 h-4 text-slate-600 absolute left-3 top-2"></i>
-            </form>
-
-            <!-- Cart Link -->
-            <a href="{{ url_for('orders.cart') }}" class="relative p-2 text-slate-600 hover:text-brand-600 hover:bg-slate-100 rounded-lg transition-colors">
-              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
-              {% if cart_item_count > 0 %}
-                <span id="cart-badge" class="absolute -top-1 -right-1 bg-brand-600 text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center shadow-sm">
-                  {{ cart_item_count }}
-                </span>
-              {% else %}
-                <span id="cart-badge" class="hidden absolute -top-1 -right-1 bg-brand-600 text-white text-[10px] font-bold rounded-full w-5 h-5 items-center justify-center shadow-sm">
-                  0
-                </span>
-              {% endif %}
+          <div class="flex items-center gap-3 sm:gap-4">
+            
+            <!-- Cart Button -->
+            <a href="{{ url_for('orders.cart') }}" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#162947] hover:bg-[#1d355c] text-white transition-all text-xs font-semibold border border-[#264472] shadow-xs">
+              <div class="relative">
+                <i data-lucide="shopping-cart" class="w-4 h-4 text-sky-300"></i>
+                {% if cart_item_count > 0 %}
+                  <span id="cart-badge" class="absolute -top-2 -right-2.5 bg-sky-500 text-white text-[9px] font-black rounded-full w-4 h-4 flex items-center justify-center shadow">
+                    {{ cart_item_count }}
+                  </span>
+                {% else %}
+                  <span id="cart-badge" class="hidden absolute -top-2 -right-2.5 bg-sky-500 text-white text-[9px] font-black rounded-full w-4 h-4 items-center justify-center shadow">
+                    0
+                  </span>
+                {% endif %}
+              </div>
+              <span class="hidden sm:inline font-bold">Cart</span>
             </a>
 
             <!-- User Auth / Profile -->
             {% if current_user.is_authenticated and not current_user.is_admin %}
-              <a href="{{ url_for('orders.my_orders') }}" class="text-xs font-medium text-slate-600 hover:text-brand-600 hidden sm:block">My Orders</a>
-              <div class="flex items-center gap-2 pl-2 border-l border-slate-200">
-                <div class="w-8 h-8 rounded-full bg-brand-100 text-brand-700 font-semibold text-xs flex items-center justify-center">
+              <a href="{{ url_for('orders.my_orders') }}" class="text-xs font-semibold text-slate-200 hover:text-white hidden sm:block">My Orders</a>
+              <div class="flex items-center gap-2 pl-2 border-l border-[#243e69]">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-r from-sky-400 to-indigo-500 text-white font-bold text-xs flex items-center justify-center shadow">
                   {{ current_user.name[:1] }}
                 </div>
-                <a href="{{ url_for('auth.logout') }}" title="Sign Out" class="p-1.5 text-slate-600 hover:text-rose-600 transition-colors">
+                <a href="{{ url_for('auth.logout') }}" title="Sign Out" class="p-1.5 text-slate-300 hover:text-rose-400 transition-colors">
                   <i data-lucide="log-out" class="w-4 h-4"></i>
                 </a>
               </div>
             {% else %}
-              <a href="{{ url_for('auth.login') }}" class="text-xs font-semibold text-slate-700 hover:text-brand-600 px-3 py-2 rounded-lg hover:bg-slate-100 transition-colors">Sign In</a>
-              <a href="{{ url_for('auth.register') }}" class="text-xs font-semibold text-white bg-brand-600 hover:bg-brand-700 px-3.5 py-2 rounded-lg shadow-sm shadow-brand-500/20 transition-all">Sign Up</a>
+              <a href="{{ url_for('auth.login') }}" class="text-xs font-semibold text-slate-200 hover:text-white px-3 py-2 rounded-lg hover:bg-[#162947] transition-colors">Sign In</a>
+              <a href="{{ url_for('auth.register') }}" class="text-xs font-bold text-slate-950 bg-sky-400 hover:bg-sky-300 px-3.5 py-2 rounded-xl shadow-sm transition-all">Sign Up</a>
             {% endif %}
 
-            <!-- Switch to Admin Dashboard link -->
-            <a href="{{ url_for('dashboard.overview') }}" class="ml-2 inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 transition-all shadow-sm">
-              <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-indigo-400"></i>
-              <span>Admin Center</span>
+            <!-- Admin Portal Link -->
+            <a href="{{ url_for('dashboard.overview') }}" class="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-950/80 hover:bg-sky-900 border border-sky-700/60 text-sky-200 hover:text-white text-xs font-semibold transition-all">
+              <i data-lucide="shield" class="w-3.5 h-3.5 text-sky-400"></i>
+              <span>Admin Console</span>
             </a>
           </div>
+
         </div>
       </div>
     </header>
@@ -153,43 +168,28 @@
       {% block content %}{% endblock %}
     </main>
 
-    <!-- Storefront Footer -->
-    <footer class="bg-white border-t border-slate-200 mt-20 py-10">
+    <!-- Storefront Footer (Clean & Neutral) -->
+    <footer class="bg-white border-t border-slate-200 mt-20 py-10 text-slate-600 text-xs">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-2">
-          <div class="w-6 h-6 rounded-lg bg-brand-600 flex items-center justify-center text-white text-xs">
-            <i data-lucide="zap" class="w-3.5 h-3.5 fill-current"></i>
+          <div class="w-6 h-6 rounded-md bg-slate-900 flex items-center justify-center text-white text-[10px] font-bold">
+            FD
           </div>
-          <span class="text-sm font-bold text-slate-800 font-display">FlashDeals AI</span>
-          <span class="text-xs text-slate-600">| Dynamic Pricing & Real-Time Fraud Defense</span>
+          <span class="font-bold text-slate-800 font-display">FlashDeals E-Commerce Platform</span>
+          <span class="text-slate-600">| Dynamic Pricing & Real-Time Fraud Shield</span>
         </div>
-        <div class="flex items-center gap-6 text-xs text-slate-600">
-          <a href="{{ url_for('dashboard.overview') }}" class="hover:text-brand-600">Admin Command Center</a>
-          <a href="{{ url_for('auth.admin_login') }}" class="hover:text-brand-600">Admin Login</a>
-          <span>Powered by XGBoost & Flask</span>
+        <div class="flex items-center gap-6 text-slate-600">
+          <a href="{{ url_for('dashboard.overview') }}" class="hover:text-slate-900 font-medium">Admin Dashboard</a>
+          <a href="{{ url_for('auth.admin_login') }}" class="hover:text-slate-900 font-medium">Admin Sign In</a>
+          <span>Built for Flash Sales Operations</span>
         </div>
       </div>
     </footer>
   {% endblock %}
 
-  <!-- Initialize Lucide Icons & Global Scripts -->
+  <!-- Initialize Lucide Icons -->
   <script>
     lucide.createIcons();
-
-    // Live Flash Sale Countdown Timer
-    function updateCountdown() {
-      const el = document.getElementById('nav-countdown');
-      if (!el) return;
-      
-      const now = new Date();
-      // Target midnight or 4 hour window
-      const hours = String(3 - (now.getHours() % 4)).padStart(2, '0');
-      const minutes = String(59 - now.getMinutes()).padStart(2, '0');
-      const seconds = String(59 - now.getSeconds()).padStart(2, '0');
-      el.textContent = `${hours}:${minutes}:${seconds}`;
-    }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
 
     // Global Toast Notification Helper
     window.showToast = function(message, type = 'success') {
@@ -197,7 +197,7 @@
       if (!container) return;
       const toast = document.createElement('div');
       const bgClasses = type === 'error' ? 'bg-rose-50 text-rose-800 border-rose-200' :
-                        type === 'info' ? 'bg-blue-50 text-blue-800 border-blue-200' :
+                        type === 'info' ? 'bg-sky-50 text-sky-800 border-sky-200' :
                         'bg-emerald-50 text-emerald-800 border-emerald-200';
       const icon = type === 'error' ? 'alert-circle' : type === 'info' ? 'info' : 'check-circle-2';
       
@@ -205,7 +205,7 @@
       toast.innerHTML = `
         <i data-lucide="${icon}" class="w-5 h-5 flex-shrink-0"></i>
         <div class="flex-1">${message}</div>
-        <button onclick="this.parentElement.remove()" class="opacity-70 hover:opacity-100"><i data-lucide="x" class="w-4 h-4"></i></button>
+        <button onclick="this.parentElement.remove()" class="text-slate-400 hover:text-slate-600"><i data-lucide="x" class="w-4 h-4"></i></button>
       `;
       container.appendChild(toast);
       lucide.createIcons();
