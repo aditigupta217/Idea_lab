@@ -19,12 +19,12 @@
     
     <!-- Left: Product Graphic Visual Showcase -->
     <div class="lg:col-span-6 bg-slate-50/70 rounded-2xl border border-slate-100 flex flex-col items-center justify-center p-12 min-h-[380px] relative">
-      {% if product.current_price < product.base_price %}
-        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-rose-50 text-rose-700 border border-rose-200 flex items-center gap-1 shadow-xs">
-          <i data-lucide="zap" class="w-3.5 h-3.5 fill-current"></i>
-          <span>Flash Drop -{{ product.to_dict().discount_pct }}% OFF</span>
-        </span>
-      {% endif %}
+      <!-- Prominent In Sale Badge -->
+      <span class="absolute top-4 left-4 px-3.5 py-1.5 rounded-full text-xs font-bold bg-sky-50 text-sky-800 border border-sky-300 flex items-center gap-1.5 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
+        <i data-lucide="zap" class="w-3.5 h-3.5 fill-current text-sky-600"></i>
+        <span>IN SALE • {{ product.discount_pct }}% OFF</span>
+      </span>
 
       <div class="p-8 rounded-full bg-white text-slate-700 shadow-sm border border-slate-200/60">
         <i data-lucide="{% if product.category == 'Electronics' %}smartphone{% elif product.category == 'Fashion & Apparel' %}shirt{% elif product.category == 'Home & Kitchen' %}home{% elif product.category == 'Books & Media' %}book-open{% else %}sparkles{% endif %}" class="w-20 h-20 stroke-1 text-slate-600"></i>
@@ -39,39 +39,41 @@
     <div class="lg:col-span-6 space-y-6 flex flex-col justify-between">
       <div class="space-y-4">
         <div class="space-y-1">
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-600">{{ product.category }}</span>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-700 bg-sky-50 px-2.5 py-0.5 rounded-md border border-sky-200">{{ product.category }}</span>
+            <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">⚡ Live Flash Drop</span>
+          </div>
           <h1 class="text-2xl sm:text-3xl font-extrabold font-display text-slate-900 leading-snug">{{ product.name }}</h1>
         </div>
 
         <!-- Live Pricing Box (Clean) -->
-        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-baseline justify-between">
+        <div class="p-4 rounded-2xl bg-sky-50/40 border border-sky-200 flex items-baseline justify-between">
           <div>
-            <div class="text-[10px] uppercase font-bold text-slate-500">Current Deal Price</div>
+            <div class="text-[10px] uppercase font-bold text-sky-900/70">Current Deal Price</div>
             <div class="flex items-baseline gap-3 mt-1">
               <span class="text-3xl font-black font-mono text-slate-900">{{ product.current_price | currency }}</span>
-              {% if product.current_price < product.base_price %}
-                <span class="text-sm line-through text-slate-400 font-mono">{{ product.base_price | currency }}</span>
-              {% endif %}
+              <span class="text-sm line-through text-slate-400 font-mono">MRP {{ product.mrp | currency }}</span>
             </div>
           </div>
-          {% if product.current_price < product.base_price %}
-            <span class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 text-xs font-bold">
-              Save {{ (product.base_price - product.current_price) | currency }}
-            </span>
-          {% endif %}
+          <span class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 text-xs font-bold border border-emerald-200">
+            Save {{ (product.mrp - product.current_price) | currency }} ({{ product.discount_pct }}% OFF)
+          </span>
         </div>
 
         <!-- Competitor Price Intelligence -->
         {% if competitors %}
           <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-            <div class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-              <i data-lucide="scale" class="w-4 h-4 text-slate-600"></i>
-              <span>Market Price Comparison</span>
+            <div class="text-xs font-bold text-slate-800 flex items-center justify-between">
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="scale" class="w-4 h-4 text-sky-600"></i>
+                <span>Market Price Comparison</span>
+              </div>
+              <span class="text-[10px] text-slate-500 font-normal">Live Multi-Store Tracking</span>
             </div>
             <div class="grid grid-cols-2 gap-2 text-xs">
               {% for comp in competitors[:2] %}
-                <div class="p-2.5 rounded-xl bg-white border border-slate-200 flex items-center justify-between">
-                  <span class="text-slate-600 font-medium">{{ comp.competitor_name }}:</span>
+                <div class="p-2.5 rounded-xl bg-white border border-slate-200 flex items-center justify-between shadow-2xs">
+                  <span class="text-slate-600 font-semibold">{{ comp.competitor_name }}:</span>
                   <span class="font-mono font-bold text-slate-800">{{ comp.competitor_price | currency }}</span>
                 </div>
               {% endfor %}

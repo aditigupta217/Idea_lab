@@ -124,16 +124,10 @@
           <div class="relative p-5 bg-slate-50/60 flex flex-col justify-between h-48 border-b border-slate-100">
             <!-- Badges -->
             <div class="flex items-center justify-between w-full">
-              {% if p.current_price < p.base_price %}
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-rose-50 text-rose-700 border border-rose-200 flex items-center gap-1 shadow-xs">
-                  <i data-lucide="zap" class="w-3 h-3 fill-current"></i>
-                  <span>Save {{ p.discount_pct }}%</span>
-                </span>
-              {% else %}
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-white text-slate-600 border border-slate-200">
-                  Standard Price
-                </span>
-              {% endif %}
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-sky-50 text-sky-800 border border-sky-300 flex items-center gap-1 shadow-2xs">
+                <i data-lucide="zap" class="w-3 h-3 fill-current text-sky-600"></i>
+                <span>IN SALE • {{ p.discount_pct }}% OFF</span>
+              </span>
 
               <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">{{ p.category }}</span>
             </div>
@@ -168,12 +162,10 @@
                 </h3>
               </a>
 
-              <!-- Pricing Display -->
+              <!-- Pricing Display with MRP -->
               <div class="mt-2.5 flex items-baseline gap-2">
-                <span class="text-lg font-extrabold font-mono text-slate-900">{{ p.current_price | currency }}</span>
-                {% if p.current_price < p.base_price %}
-                  <span class="text-xs line-through text-slate-400 font-mono">{{ p.base_price | currency }}</span>
-                {% endif %}
+                <span class="text-lg font-black font-mono text-slate-900">{{ p.current_price | currency }}</span>
+                <span class="text-xs line-through text-slate-400 font-mono">MRP {{ p.mrp | currency }}</span>
               </div>
             </div>
 

@@ -154,20 +154,41 @@ def localize_data():
     df_prod.to_csv(prod_path, index=False)
     print(f"✓ Updated {len(df_prod)} products with authentic Indian SKUs and realistic INR pricing.")
 
-    # --- Update competitor_prices.csv ---
+    # --- Update competitor_prices.csv with distinct retailers per product ---
     comp_path = os.path.join(raw_dir, 'competitor_prices.csv')
     df_comp = pd.read_csv(comp_path)
-    indian_competitors = ["Flipkart", "Amazon India", "Meesho", "Myntra", "Reliance Digital", "Croma", "Tata CLiQ"]
+    
+    category_competitors = {
+        "Electronics": ["Amazon India", "Flipkart", "Croma", "Reliance Digital", "Tata CLiQ"],
+        "Fashion & Apparel": ["Myntra", "Amazon India", "Flipkart", "Tata CLiQ", "Ajio", "Meesho"],
+        "Home & Kitchen": ["Amazon India", "Flipkart", "Meesho", "Croma", "Reliance Digital"],
+        "Books & Media": ["Amazon India", "Flipkart", "Bookswagon", "SapnaOnline", "Meesho"],
+        "Health & Beauty": ["Nykaa", "Amazon India", "Flipkart", "Purplle", "Tata CLiQ"]
+    }
+    default_competitors = ["Amazon India", "Flipkart", "Myntra", "Tata CLiQ", "Croma", "Reliance Digital", "Meesho"]
 
-    for i in range(len(df_comp)):
-        p_id = df_comp.at[i, 'product_id']
-        base = prod_id_to_base_price.get(p_id, 2499.0)
-        df_comp.at[i, 'competitor_name'] = random.choice(indian_competitors)
-        # Competitor price within 85% to 105% of base price
-        df_comp.at[i, 'competitor_price'] = round(base * random.uniform(0.85, 1.02), 2)
+    # Assign unique competitors for each product
+    for prod_id, group in df_comp.groupby('product_id'):
+        category = df_prod.loc[df_prod['id'] == prod_id, 'category'].values
+        cat = category[0] if len(category) > 0 else 'Electronics'
+        comp_pool = category_competitors.get(cat, default_competitors)
+        
+        # Sample distinct competitors without replacement for this product
+        k = min(len(group), len(comp_pool))
+        chosen_comps = random.sample(comp_pool, k=k)
+        if len(chosen_comps) < len(group):
+            chosen_comps += default_competitors[:len(group) - len(chosen_comps)]
+        
+        base = prod_id_to_base_price.get(prod_id, 2499.0)
+        
+        for idx, (comp_row_idx, _) in enumerate(group.iterrows()):
+            comp_name = chosen_comps[idx % len(chosen_comps)]
+            df_comp.at[comp_row_idx, 'competitor_name'] = comp_name
+            # Jitter price between 88% and 106% of base price
+            df_comp.at[comp_row_idx, 'competitor_price'] = round(base * random.uniform(0.88, 1.05), 2)
 
     df_comp.to_csv(comp_path, index=False)
-    print(f"✓ Updated {len(df_comp)} competitor prices with Indian retailers (Flipkart, Amazon India, Meesho, etc.).")
+    print(f"✓ Updated {len(df_comp)} competitor prices with distinct Indian retailers per product.")
 
     # --- Update orders.csv prices to match product prices ---
     orders_path = os.path.join(raw_dir, 'orders.csv')

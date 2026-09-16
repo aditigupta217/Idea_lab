@@ -27,7 +27,24 @@ class Product(db.Model):
     competitor_prices = db.relationship('CompetitorPrice', backref='product', lazy='dynamic')
     price_logs = db.relationship('PriceLog', backref='product', lazy='dynamic', order_by='PriceLog.timestamp.desc()')
 
+    @property
+    def mrp(self):
+        """Original retail MRP for flash sale display"""
+        if self.base_price > self.current_price:
+            return round(self.base_price, 2)
+        return round(self.current_price * 1.30, 2)
+
+    @property
+    def discount_pct(self):
+        """Calculated flash discount % vs MRP"""
+        mrp_val = self.mrp
+        if mrp_val > self.current_price:
+            return round(((mrp_val - self.current_price) / mrp_val) * 100)
+        return 20
+
     def to_dict(self):
+        mrp_val = self.mrp
+        disc = self.discount_pct
         return {
             'id': self.id,
             'name': self.name,
@@ -35,10 +52,12 @@ class Product(db.Model):
             'base_price': round(self.base_price, 2),
             'cost_price': round(self.cost_price, 2),
             'current_price': round(self.current_price, 2),
+            'mrp': mrp_val,
             'stock_quantity': self.stock_quantity,
             'popularity_score': round(self.popularity_score, 2),
             'created_at': self.created_at,
-            'discount_pct': round(((self.base_price - self.current_price) / self.base_price) * 100, 1) if self.base_price > self.current_price else 0
+            'discount_pct': disc,
+            'is_in_sale': True
         }
 
 

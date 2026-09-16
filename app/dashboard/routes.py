@@ -50,12 +50,19 @@ def overview():
 
 @dashboard_bp.route('/pricing')
 def pricing():
-    category = request.args.get('category', '')
+    category = request.args.get('category', '').strip()
+    search = request.args.get('q', '').strip()
     query = Product.query
     if category:
         query = query.filter_by(category=category)
+    if search:
+        query = query.filter(
+            (Product.name.ilike(f'%{search}%')) |
+            (Product.id.ilike(f'%{search}%')) |
+            (Product.category.ilike(f'%{search}%'))
+        )
 
-    products = query.order_by(Product.stock_quantity.asc()).limit(60).all()
+    products = query.order_by(Product.stock_quantity.asc()).limit(100).all()
     recommendations = []
     for prod in products:
         rec = pricing_engine.recommend_price(prod)
@@ -67,24 +74,35 @@ def pricing():
         'admin/pricing.html',
         recommendations=recommendations,
         categories=categories,
-        selected_category=category
+        selected_category=category,
+        search_query=search
     )
 
 @dashboard_bp.route('/fraud-alerts')
 def fraud_alerts():
-    decision_filter = request.args.get('decision', '')
+    decision_filter = request.args.get('decision', '').strip()
+    search = request.args.get('q', '').strip()
     query = FraudAlert.query
 
     if decision_filter:
         query = query.filter_by(decision=decision_filter)
+    if search:
+        query = query.join(FraudAlert.order, isouter=True).join(Order.product, isouter=True).join(Order.customer, isouter=True).filter(
+            (FraudAlert.order_id.ilike(f'%{search}%')) |
+            (FraudAlert.fraud_type.ilike(f'%{search}%')) |
+            (Product.name.ilike(f'%{search}%')) |
+            (Customer.name.ilike(f'%{search}%')) |
+            (Customer.email.ilike(f'%{search}%'))
+        )
 
-    alerts = query.order_by(FraudAlert.created_at.desc()).limit(50).all()
+    alerts = query.order_by(FraudAlert.created_at.desc()).limit(80).all()
     rules = FraudRuleConfig.query.all()
 
     return render_template(
         'admin/fraud_alerts.html',
         alerts=alerts,
         selected_decision=decision_filter,
+        search_query=search,
         rules=rules
     )
 
